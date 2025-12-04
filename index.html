@@ -1,0 +1,1140 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description"
+        content="DESIGNWAY2 - Премиальные решения в области дизайна и разработки. Создаем уникальные проекты с безупречным качеством.">
+    <meta name="keywords" content="дизайн, разработка, веб-дизайн, премиум дизайн, брендинг">
+    <meta name="author" content="DESIGNWAY2">
+
+    <meta property="og:title" content="DESIGNWAY2 - Премиальный дизайн">
+    <meta property="og:description" content="Создаем уникальные проекты с безупречным качеством">
+    <meta property="og:type" content="website">
+    <meta property="og:image" content="assets/images/og-image.jpg">
+
+    <title>DESIGNWAY2 - Премиальный дизайн и разработка</title>
+
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+
+    <link rel="stylesheet" href="assets/globals.css">
+    <link rel="stylesheet" href="components/header/header.css">
+    <link rel="stylesheet" href="components/hero/hero.css">
+    <link rel="stylesheet" href="components/about/about.css">
+    <link rel="stylesheet" href="components/services/services.css">
+    <link rel="stylesheet" href="components/skills/skills.css">
+    <link rel="stylesheet" href="components/pricing/pricing.css">
+    <link rel="stylesheet" href="components/order/order.css">
+    <link rel="stylesheet" href="components/contact/contact.css">
+    <link rel="stylesheet" href="components/faq/faq.css">
+
+    <link rel="stylesheet" href="components/portfolio/portfolio.css">
+    <link rel="stylesheet" href="components/footer/footer.css">
+</head>
+
+<body>
+
+    <header class="header">
+        <div class="container">
+            <nav class="header__nav">
+                <a href="#" class="header__logo">
+                    <span class="header__logo-text">DESIGN</span>
+                    <span class="header__logo-accent">WAY</span>
+                </a>
+
+                <ul class="header__menu">
+                    <li class="header__menu-item">
+                        <a href="#about" class="header__menu-link">О нас</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a href="#services" class="header__menu-link">Услуги</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a href="#pricing" class="header__menu-link">Стоимость</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a href="#portfolio" class="header__menu-link">Портфолио</a>
+                    </li>
+                    <li class="header__menu-item">
+                        <a href="#contact" class="header__menu-link">Контакты</a>
+                    </li>
+                </ul>
+
+                <button class="header__cta">
+                    <span>Начать проект</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+
+                <button class="header__burger" aria-label="Открыть меню">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </button>
+            </nav>
+        </div>
+
+        <div class="header__mobile-menu">
+            <ul class="header__mobile-list">
+                <li><a href="#about" class="header__mobile-link">О нас</a></li>
+                <li><a href="#services" class="header__mobile-link">Услуги</a></li>
+                <li><a href="#portfolio" class="header__mobile-link">Портфолио</a></li>
+                <li><a href="#pricing" class="header__mobile-link">Стоимость</a></li>
+                <li><a href="#contact" class="header__mobile-link">Контакты</a></li>
+            </ul>
+            <button class="header__mobile-cta">Начать проект</button>
+        </div>
+    </header>
+
+    <section class="hero">
+        <div class="container">
+            <div class="hero__left">
+                <h1 class="hero__title">
+                    Создаем <span class="hero__title-accent">шедевры</span> которые вдохновляют
+                </h1>
+
+                <p class="hero__subtitle">
+                    Трансформируем ваши идеи в визуальные истории, которые захватывают внимание и остаются в памяти
+                    навсегда
+                </p>
+
+                <button class="hero__button">
+                    <span>Обсудить проект</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </button>
+            </div>
+
+            <div class="hero__right">
+                <div class="hero__canvas-wrapper">
+                    <canvas id="heroCanvas" class="hero__canvas"></canvas>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="about" class="about">
+        <div class="container">
+            <div class="about__header">
+                <span class="about__subtitle">ОБО МНЕ</span>
+                <h2 class="about__title">Превращаю <span class="text-accent">идеи</span><br>в цифровые <span
+                        class="text-accent">шедевры</span></h2>
+                <p class="about__intro">Я — независимый дизайнер с более чем 7-летним опытом. Специализируюсь на
+                    создании уникальных цифровых продуктов, которые не только красивы, но и приносят реальную пользу
+                    бизнесу.</p>
+            </div>
+
+            <div class="about__content">
+                <div class="about__gallery">
+                    <div class="gallery__wrapper">
+                        <div class="gallery__item gallery__item--main">
+                            <div class="gallery__image-wrapper">
+                                <img src="assets/images/about1.png" alt="Рабочий процесс дизайнера"
+                                    class="gallery__image">
+                                <div class="gallery__overlay"></div>
+                            </div>
+                            <div class="gallery__caption">
+                                <span class="caption__text">Рабочий процесс</span>
+                            </div>
+                        </div>
+
+                        <div class="gallery__item gallery__item--secondary">
+                            <div class="gallery__image-wrapper">
+                                <img src="assets/images/about2.png" alt="Рабочее пространство" class="gallery__image">
+                                <div class="gallery__overlay"></div>
+                            </div>
+                            <div class="gallery__caption">
+                                <span class="caption__text">Рабочее пространство</span>
+                            </div>
+                        </div>
+
+                        <div class="gallery__decoration">
+                            <span class="decoration__dot decoration__dot--1"></span>
+                            <span class="decoration__dot decoration__dot--2"></span>
+                            <span class="decoration__dot decoration__dot--3"></span>
+                            <div class="decoration__line"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="about__info">
+                    <h3 class="info__title">Мой подход<br>к работе</h3>
+                    <div class="info__items">
+                        <div class="info__item">
+                            <div class="item__icon">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none">
+                                    <path
+                                        d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z"
+                                        stroke="currentColor" stroke-width="2" />
+                                    <path d="M7 12L10 15L17 8" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="item__content">
+                                <h4>Анализ</h4>
+                                <p>Изучаю бизнес, аудиторию и конкурентов перед началом работы</p>
+                            </div>
+                        </div>
+                        <div class="info__item">
+                            <div class="item__icon">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none">
+                                    <path
+                                        d="M3 10C3 6.22876 3 4.34315 4.17157 3.17157C5.34315 2 7.22876 2 11 2H13C16.7712 2 18.6569 2 19.8284 3.17157C21 4.34315 21 6.22876 21 10V14C21 17.7712 21 19.6569 19.8284 20.8284C18.6569 22 16.7712 22 13 22H11C7.22876 22 5.34315 22 4.17157 20.8284C3 19.6569 3 17.7712 3 14V10Z"
+                                        stroke="currentColor" stroke-width="2" />
+                                    <path d="M15 2V5C15 6.88562 15 7.82843 15.5858 8.41421C16.1716 9 17.1144 9 19 9H21"
+                                        stroke="currentColor" stroke-width="2" />
+                                    <path d="M8 14H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                    <path d="M8 18H13" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                            <div class="item__content">
+                                <h4>Стратегия</h4>
+                                <p>Каждый элемент работает на достижение бизнес-целей</p>
+                            </div>
+                        </div>
+                        <div class="info__item">
+                            <div class="item__icon">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none">
+                                    <path
+                                        d="M12 21C16.9706 21 21 16.9706 21 12C21 7.02944 16.9706 3 12 3C7.02944 3 3 7.02944 3 12C3 16.9706 7.02944 21 12 21Z"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                    <path
+                                        d="M12 15C13.6569 15 15 13.6569 15 12C15 10.3431 13.6569 9 12 9C10.3431 9 9 10.3431 9 12C9 13.6569 10.3431 15 12 15Z"
+                                        stroke="currentColor" stroke-width="2" />
+                                    <path d="M3 12H5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                    <path d="M19 12H21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                    <path d="M12 3V5" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                    <path d="M12 19V21" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                </svg>
+                            </div>
+                            <div class="item__content">
+                                <h4>Детали</h4>
+                                <p>От типографики до анимаций — каждая деталь проработана</p>
+                            </div>
+                        </div>
+                        <div class="info__item">
+                            <div class="item__icon">
+                                <svg class="icon" viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="item__content">
+                                <h4>Технологии</h4>
+                                <p>Использую актуальные инструменты и подходы</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="info__cta">
+                        <a href="#contact" class="cta__link">
+                            <span>Обсудить проект</span>
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="services" class="services">
+        <div class="container">
+            <div class="services__header">
+                <span class="services__subtitle">УСЛУГИ</span>
+                <h2 class="services__title">Что я <span class="text-accent">предлагаю</span></h2>
+                <p class="services__intro">Создаю визуальный контент, который выделяет бренды и рассказывает истории.
+                </p>
+            </div>
+
+            <div class="services__grid">
+                <div class="service">
+                    <div class="service__image">
+                        <img src="assets/images/services1.avif" alt="Оформление постов в соцсети" class="service__img">
+                    </div>
+                    <div class="service__content">
+                        <h3 class="service__title">Оформление постов в соцсети</h3>
+                        <p class="service__description">Создание визуального контента для Instagram, Facebook, VK и
+                            других платформ. Единый стиль для вашего бренда.</p>
+                    </div>
+                </div>
+
+                <div class="service">
+                    <div class="service__image">
+                        <img src="assets/images/services2.avif" alt="Создание логотипа" class="service__img">
+                    </div>
+                    <div class="service__content">
+                        <h3 class="service__title">Создание логотипа</h3>
+                        <p class="service__description">Разработка уникального логотипа, который отражает суть вашего
+                            бренда и запоминается надолго.</p>
+                    </div>
+                </div>
+
+                <div class="service">
+                    <div class="service__image">
+                        <img src="assets/images/services3.jpg" alt="Создание иллюстраций" class="service__img">
+                    </div>
+                    <div class="service__content">
+                        <h3 class="service__title">Создание иллюстраций</h3>
+                        <p class="service__description">Уникальные иллюстрации для проектов, книг, сайтов и рекламных
+                            материалов.</p>
+                    </div>
+                </div>
+
+                <div class="service">
+                    <div class="service__image">
+                        <img src="assets/images/services4.avif" alt="Обложка для музыкального диска"
+                            class="service__img">
+                    </div>
+                    <div class="service__content">
+                        <h3 class="service__title">Обложка для музыкального диска</h3>
+                        <p class="service__description">Дизайн обложек для альбомов, синглов и музыкальных релизов,
+                            который передает настроение музыки.</p>
+                    </div>
+                </div>
+
+                <div class="service">
+                    <div class="service__image">
+                        <img src="assets/images/services5.avif" alt="Дизайн мерча" class="service__img">
+                    </div>
+                    <div class="service__content">
+                        <h3 class="service__title">Дизайн мерча</h3>
+                        <p class="service__description">Разработка дизайна для футболок, худи, кружек и другой продукции
+                            с символикой бренда.</p>
+                    </div>
+                </div>
+
+                <div class="service">
+                    <div class="service__image">
+                        <img src="assets/images/services6.avif" alt="Инфографика" class="service__img">
+                    </div>
+                    <div class="service__content">
+                        <h3 class="service__title">Инфографика</h3>
+                        <p class="service__description">Визуализация данных и сложной информации в понятном и
+                            привлекательном формате.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="skills" class="skills">
+        <div class="container">
+            <div class="skills__header">
+                <span class="skills__subtitle">ЧТО Я УМЕЮ</span>
+                <h2 class="skills__title">Мои <span class="text-accent">направления</span> работы</h2>
+                <p class="skills__intro">Профессиональные дизайн-решения для бизнеса и творческих проектов.</p>
+            </div>
+
+            <div class="skills__grid">
+                <div class="skill">
+                    <div class="skill__image">
+                        <img src="assets/images/skills1.avif" alt="Логотип базовый" class="skill__img">
+                    </div>
+                    <div class="skill__content">
+                        <h3 class="skill__title">Логотип базовый</h3>
+                        <p class="skill__description">Создание лаконичного логотипа на основе предоставленных
+                            материалов: эскизов, описаний или референсов.</p>
+                        <div class="skill__footer">
+                            <span class="skill__price">от 1600 ₽</span>
+                            <button class="skill__button">Заказать</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill__image">
+                        <img src="assets/images/skills2.avif" alt="Логотип премиум" class="skill__img">
+                    </div>
+                    <div class="skill__content">
+                        <h3 class="skill__title">Логотип премиум</h3>
+                        <p class="skill__description">Разработка уникального логотипа с нуля, включая анализ рынка,
+                            создание концепции и фирменного стиля.</p>
+                        <div class="skill__footer">
+                            <span class="skill__price">от 2800 ₽</span>
+                            <button class="skill__button">Заказать</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill__image">
+                        <img src="assets/images/skills3.avif" alt="Анимированный логотип" class="skill__img">
+                    </div>
+                    <div class="skill__content">
+                        <h3 class="skill__title">Анимированный логотип</h3>
+                        <p class="skill__description">Создание динамичного логотипа с эффектной анимацией для
+                            видео-контента и digital-проектов.</p>
+                        <div class="skill__footer">
+                            <span class="skill__price">от 4200 ₽</span>
+                            <button class="skill__button">Заказать</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill__image">
+                        <img src="assets/images/skills4.avif" alt="Интерфейсная анимация" class="skill__img">
+                    </div>
+                    <div class="skill__content">
+                        <h3 class="skill__title">Интерфейсная анимация</h3>
+                        <p class="skill__description">Анимация элементов интерфейса, демонстрирующая взаимодействие
+                            пользователя с продуктом.</p>
+                        <div class="skill__footer">
+                            <span class="skill__price">от 4600 ₽</span>
+                            <button class="skill__button">Заказать</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill__image">
+                        <img src="assets/images/skills5.avif" alt="Рекламный баннер" class="skill__img">
+                    </div>
+                    <div class="skill__content">
+                        <h3 class="skill__title">Рекламный баннер</h3>
+                        <p class="skill__description">Дизайн баннеров для сайтов и социальных сетей с использованием
+                            фирменного стиля бренда.</p>
+                        <div class="skill__footer">
+                            <span class="skill__price">от 1700 ₽</span>
+                            <button class="skill__button">Заказать</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill__image">
+                        <img src="assets/images/skills6.avif" alt="Дизайн открытки" class="skill__img">
+                    </div>
+                    <div class="skill__content">
+                        <h3 class="skill__title">Дизайн открытки</h3>
+                        <p class="skill__description">Создание элегантных открыток и приглашений с индивидуальным
+                            подходом к каждому проекту.</p>
+                        <div class="skill__footer">
+                            <span class="skill__price">от 1400 ₽</span>
+                            <button class="skill__button">Заказать</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill__image">
+                        <img src="assets/images/skills7.avif" alt="Дизайн сертификата" class="skill__img">
+                    </div>
+                    <div class="skill__content">
+                        <h3 class="skill__title">Дизайн сертификата</h3>
+                        <p class="skill__description">Разработка элегантных сертификатов с продуманной композицией,
+                            типографикой и визуальными элементами.</p>
+                        <div class="skill__footer">
+                            <span class="skill__price">от 1800 ₽</span>
+                            <button class="skill__button">Заказать</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill__image">
+                        <img src="assets/images/skills8.avif" alt="Обложка для релиза" class="skill__img">
+                    </div>
+                    <div class="skill__content">
+                        <h3 class="skill__title">Обложка для релиза</h3>
+                        <p class="skill__description">Создание обложек для музыкальных альбомов и синглов, отражающих
+                            настроение и стиль исполнителя.</p>
+                        <div class="skill__footer">
+                            <span class="skill__price">от 1500 ₽</span>
+                            <button class="skill__button">Заказать</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill__image">
+                        <img src="assets/images/skills9.avif" alt="Дизайн стикеров" class="skill__img">
+                    </div>
+                    <div class="skill__content">
+                        <h3 class="skill__title">Дизайн стикеров</h3>
+                        <p class="skill__description">Создание ярких наклеек и стикеров для промо-акций и укрепления
+                            визуального образа бренда.</p>
+                        <div class="skill__footer">
+                            <span class="skill__price">от 1500 ₽</span>
+                            <button class="skill__button">Заказать</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill__image">
+                        <img src="assets/images/skills10.avif" alt="Дизайн постера" class="skill__img">
+                    </div>
+                    <div class="skill__content">
+                        <h3 class="skill__title">Дизайн постера</h3>
+                        <p class="skill__description">Разработка эффектных постеров для мероприятий, которые привлекают
+                            внимание и передают атмосферу.</p>
+                        <div class="skill__footer">
+                            <span class="skill__price">от 2500 ₽</span>
+                            <button class="skill__button">Заказать</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill__image">
+                        <img src="assets/images/skills11.avif" alt="Дизайн этикетки" class="skill__img">
+                    </div>
+                    <div class="skill__content">
+                        <h3 class="skill__title">Дизайн этикетки</h3>
+                        <p class="skill__description">Создание привлекательных этикеток и ценников, повышающих
+                            узнаваемость и продажи продукции.</p>
+                        <div class="skill__footer">
+                            <span class="skill__price">от 1200 ₽</span>
+                            <button class="skill__button">Заказать</button>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="skill">
+                    <div class="skill__image">
+                        <img src="assets/images/skills12.avif" alt="Дизайн меню" class="skill__img">
+                    </div>
+                    <div class="skill__content">
+                        <h3 class="skill__title">Дизайн меню</h3>
+                        <p class="skill__description">Профессиональное оформление меню для ресторанов и кафе, сочетающее
+                            функциональность и эстетику.</p>
+                        <div class="skill__footer">
+                            <span class="skill__price">от 5500 ₽</span>
+                            <button class="skill__button">Заказать</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="pricing" class="pricing">
+        <div class="container">
+            <div class="pricing__header">
+                <span class="pricing__subtitle">СТОИМОСТЬ</span>
+                <h2 class="pricing__title">Прозрачный <span class="text-accent">прайс-лист</span></h2>
+                <p class="pricing__intro">Честные цены без скрытых платежей. Каждый проект оценивается индивидуально.
+                </p>
+            </div>
+
+            <div class="pricing__grid">
+                <div class="pricing-card pricing-card--basic">
+                    <div class="pricing-card__header">
+                        <h3 class="pricing-card__title">Базовый</h3>
+                        <div class="pricing-card__price">
+                            <span class="price__amount">от 1 500</span>
+                            <span class="price__currency">₽</span>
+                        </div>
+                        <p class="pricing-card__period">за проект</p>
+                    </div>
+
+                    <div class="pricing-card__features">
+                        <div class="feature">
+                            <svg class="feature__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span class="feature__text">Логотип простой</span>
+                        </div>
+                        <div class="feature">
+                            <svg class="feature__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span class="feature__text">Дизайн этикетки</span>
+                        </div>
+                        <div class="feature">
+                            <svg class="feature__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span class="feature__text">Макет баннера</span>
+                        </div>
+                        <div class="feature feature--disabled">
+                            <svg class="feature__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 5L15 15M15 5L5 15" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>
+                            <span class="feature__text">Анимация</span>
+                        </div>
+                        <div class="feature feature--disabled">
+                            <svg class="feature__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 5L15 15M15 5L5 15" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>
+                            <span class="feature__text">Иллюстрации</span>
+                        </div>
+                    </div>
+
+                    <button class="pricing-card__button" data-plan="basic">
+                        Выбрать тариф
+                    </button>
+                </div>
+
+                <div class="pricing-card pricing-card--popular">
+                    <div class="popular-badge">Популярный</div>
+                    <div class="pricing-card__header">
+                        <h3 class="pricing-card__title">Профессиональный</h3>
+                        <div class="pricing-card__price">
+                            <span class="price__amount">от 3 500</span>
+                            <span class="price__currency">₽</span>
+                        </div>
+                        <p class="pricing-card__period">за проект</p>
+                    </div>
+
+                    <div class="pricing-card__features">
+                        <div class="feature">
+                            <svg class="feature__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span class="feature__text">Логотип сложный</span>
+                        </div>
+                        <div class="feature">
+                            <svg class="feature__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span class="feature__text">Дизайн постера</span>
+                        </div>
+                        <div class="feature">
+                            <svg class="feature__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span class="feature__text">Обложка релиза</span>
+                        </div>
+                        <div class="feature">
+                            <svg class="feature__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span class="feature__text">Базовая анимация</span>
+                        </div>
+                        <div class="feature feature--disabled">
+                            <svg class="feature__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M5 5L15 15M15 5L5 15" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" />
+                            </svg>
+                            <span class="feature__text">Сложные иллюстрации</span>
+                        </div>
+                    </div>
+
+                    <button class="pricing-card__button" data-plan="professional">
+                        Выбрать тариф
+                    </button>
+                </div>
+
+                <div class="pricing-card pricing-card--premium">
+                    <div class="pricing-card__header">
+                        <h3 class="pricing-card__title">Премиум</h3>
+                        <div class="pricing-card__price">
+                            <span class="price__amount">от 7 000</span>
+                            <span class="price__currency">₽</span>
+                        </div>
+                        <p class="pricing-card__period">за проект</p>
+                    </div>
+
+                    <div class="pricing-card__features">
+                        <div class="feature">
+                            <svg class="feature__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span class="feature__text">Анимированный лого</span>
+                        </div>
+                        <div class="feature">
+                            <svg class="feature__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span class="feature__text">Интерфейсная анимация</span>
+                        </div>
+                        <div class="feature">
+                            <svg class="feature__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span class="feature__text">Дизайн меню</span>
+                        </div>
+                        <div class="feature">
+                            <svg class="feature__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span class="feature__text">Сложные иллюстрации</span>
+                        </div>
+                        <div class="feature">
+                            <svg class="feature__icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path d="M16.6667 5L7.50004 14.1667L3.33337 10" stroke="currentColor" stroke-width="2"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                            <span class="feature__text">Приоритетная поддержка</span>
+                        </div>
+                    </div>
+
+                    <button class="pricing-card__button" data-plan="premium">
+                        Выбрать тариф
+                    </button>
+                </div>
+            </div>
+
+            <div class="pricing__note">
+                <p>Все цены указаны за базовый проект. Стоимость может меняться в зависимости от сложности и сроков.</p>
+                <a href="#contact" class="pricing__contact-link">Нужен индивидуальный расчет?</a>
+            </div>
+        </div>
+    </section>
+
+    <section class="portfolio" id="portfolio">
+        <div class="container">
+            <div class="portfolio__header">
+                <h2 class="portfolio__title">Мои <span class="portfolio__title-accent">работы</span></h2>
+                <p class="portfolio__subtitle">Проекты, которыми я горжусь</p>
+            </div>
+
+            <div class="portfolio__grid">
+                <div class="portfolio__item">
+                    <div class="portfolio__image">
+                        <img src="assets/images/portfolio1.webp" alt="Оформление постов в соцсети" loading="lazy">
+                        <div class="portfolio__overlay">
+                            <div class="portfolio__content">
+                                <span class="portfolio__category">Соцсети</span>
+                                <h3 class="portfolio__name">Оформление постов для модного бренда</h3>
+                                <p class="portfolio__description">Единый визуальный стиль для Instagram</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio__item">
+                    <div class="portfolio__image">
+                        <img src="assets/images/portfolio2.webp" alt="Создание логотипа" loading="lazy">
+                        <div class="portfolio__overlay">
+                            <div class="portfolio__content">
+                                <span class="portfolio__category">Брендинг</span>
+                                <h3 class="portfolio__name">Логотип для кофейни</h3>
+                                <p class="portfolio__description">Уникальный фирменный знак с характером</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio__item">
+                    <div class="portfolio__image">
+                        <img src="assets/images/portfolio3.jpg" alt="Создание иллюстраций" loading="lazy">
+                        <div class="portfolio__overlay">
+                            <div class="portfolio__content">
+                                <span class="portfolio__category">Иллюстрация</span>
+                                <h3 class="portfolio__name">Иллюстрации для детской книги</h3>
+                                <p class="portfolio__description">Яркие персонажи и сказочные миры</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio__item">
+                    <div class="portfolio__image">
+                        <img src="assets/images/portfolio4.jpeg" alt="Обложка музыкального альбома" loading="lazy">
+                        <div class="portfolio__overlay">
+                            <div class="portfolio__content">
+                                <span class="portfolio__category">Музыка</span>
+                                <h3 class="portfolio__name">Обложка для музыкального альбома</h3>
+                                <p class="portfolio__description">Дизайн, передающий атмосферу музыки</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio__item">
+                    <div class="portfolio__image">
+                        <img src="assets/images/portfolio5.jpg" alt="Дизайн мерча" loading="lazy">
+                        <div class="portfolio__overlay">
+                            <div class="portfolio__content">
+                                <span class="portfolio__category">Мерч</span>
+                                <h3 class="portfolio__name">Коллекция мерча для стартапа</h3>
+                                <p class="portfolio__description">Футболки, худи и аксессуары с брендингом</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="portfolio__item">
+                    <div class="portfolio__image">
+                        <img src="assets/images/portfolio6.jpeg" alt="Инфографика" loading="lazy">
+                        <div class="portfolio__overlay">
+                            <div class="portfolio__content">
+                                <span class="portfolio__category">Инфографика</span>
+                                <h3 class="portfolio__name">Инфографика для IT-компании</h3>
+                                <p class="portfolio__description">Визуализация сложных данных и статистики</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section id="order" class="order">
+        <div class="container">
+            <div class="order__header">
+                <span class="order__subtitle">ПРОЦЕСС РАБОТЫ</span>
+                <h2 class="order__title">Как я <span class="text-accent">работаю</span></h2>
+                <p class="order__intro">Прозрачный процесс сотрудничества от заявки до результата</p>
+            </div>
+
+            <div class="order__process">
+                <div class="process-step">
+                    <div class="step__icon">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                                stroke="currentColor" stroke-width="2" />
+                            <path d="M12 8V12L15 15" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div class="step__number">01</div>
+                    <div class="step__content">
+                        <h3 class="step__title">Выбор услуги</h3>
+                        <p class="step__description">Определите тип проекта и подходящий пакет услуг</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step__icon">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M3 10C3 6.22876 3 4.34315 4.17157 3.17157C5.34315 2 7.22876 2 11 2H13C16.7712 2 18.6569 2 19.8284 3.17157C21 4.34315 21 6.22876 21 10V14C21 17.7712 21 19.6569 19.8284 20.8284C18.6569 22 16.7712 22 13 22H11C7.22876 22 5.34315 22 4.17157 20.8284C3 19.6569 3 17.7712 3 14V10Z"
+                                stroke="currentColor" stroke-width="2" />
+                            <path d="M8 14H16" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            <path d="M8 18H12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                    </div>
+                    <div class="step__number">02</div>
+                    <div class="step__content">
+                        <h3 class="step__title">Заполнение формы</h3>
+                        <p class="step__description">Оставьте заявку с деталями проекта и контактами</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step__icon">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none">
+                            <path d="M8 10H16M8 14H12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            <path
+                                d="M3 12C3 7.28595 3 4.92893 4.46447 3.46447C5.92893 2 8.28595 2 12 2C15.714 2 18.0711 2 19.5355 3.46447C21 4.92893 21 7.28595 21 12C21 16.714 21 19.0711 19.5355 20.5355C18.0711 22 15.714 22 12 22C8.28595 22 5.92893 22 4.46447 20.5355C3 19.0711 3 16.714 3 12Z"
+                                stroke="currentColor" stroke-width="2" />
+                        </svg>
+                    </div>
+                    <div class="step__number">03</div>
+                    <div class="step__content">
+                        <h3 class="step__title">Обсуждение деталей</h3>
+                        <p class="step__description">Согласуем технические требования и сроки</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step__icon">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z"
+                                stroke="currentColor" stroke-width="2" />
+                            <path d="M7 12L11 16L17 8" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div class="step__number">04</div>
+                    <div class="step__content">
+                        <h3 class="step__title">Подтверждение</h3>
+                        <p class="step__description">Согласуем стоимость и подпишем договор</p>
+                    </div>
+                </div>
+
+                <div class="process-step">
+                    <div class="step__icon">
+                        <svg class="icon" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </div>
+                    <div class="step__number">05</div>
+                    <div class="step__content">
+                        <h3 class="step__title">Начало работы</h3>
+                        <p class="step__description">Приступаем к созданию вашего проекта</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="order__cta">
+                <a href="#contact" class="order__button">
+                    <span>Начать сотрудничество</span>
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="2"
+                            stroke-linecap="round" stroke-linejoin="round" />
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
+
+    <section id="contact" class="contact">
+        <div class="container">
+            <div class="contact__wrapper">
+                <div class="contact__info">
+                    <div class="contact__header">
+                        <span class="contact__subtitle">СВЯЗАТЬСЯ СО МНОЙ</span>
+                        <h2 class="contact__title">Давайте <span class="text-accent">обсудим</span> ваш проект</h2>
+                        <p class="contact__description">Опишите вашу задачу, и мы предложим лучшее решение в течение 24
+                            часов</p>
+                    </div>
+
+                    <div class="contact__details">
+                        <div class="contact__item">
+                            <div class="contact__icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path
+                                        d="M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                                        stroke="currentColor" stroke-width="2" />
+                                    <path d="M12 8V12L15 15" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="contact__content">
+                                <h3 class="contact__item-title">Быстрый ответ</h3>
+                                <p class="contact__item-text">Отвечаем в течение 2-х часов в рабочее время</p>
+                            </div>
+                        </div>
+
+                        <div class="contact__item">
+                            <div class="contact__icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path
+                                        d="M2 12C2 7.28595 2 4.92893 3.46447 3.46447C4.92893 2 7.28595 2 12 2C16.714 2 19.0711 2 20.5355 3.46447C22 4.92893 22 7.28595 22 12C22 16.714 22 19.0711 20.5355 20.5355C19.0711 22 16.714 22 12 22C7.28595 22 4.92893 22 3.46447 20.5355C2 19.0711 2 16.714 2 12Z"
+                                        stroke="currentColor" stroke-width="2" />
+                                    <path d="M7 12L11 16L17 8" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="contact__content">
+                                <h3 class="contact__item-title">Конфиденциальность</h3>
+                                <p class="contact__item-text">Все данные защищены и не передаются третьим лицам</p>
+                            </div>
+                        </div>
+
+                        <div class="contact__item">
+                            <div class="contact__icon">
+                                <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                    <path d="M12 2L15 8L22 9L17 14L18 21L12 18L6 21L7 14L2 9L9 8L12 2Z"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                        stroke-linejoin="round" />
+                                </svg>
+                            </div>
+                            <div class="contact__content">
+                                <h3 class="contact__item-title">Качество работ</h3>
+                                <p class="contact__item-text">Гарантия результата и доработки при необходимости</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="contact__form-wrapper">
+                    <form id="contact-form" class="contact-form">
+                        <div class="form-group">
+                            <label for="name" class="form-label">Ваше имя *</label>
+                            <input type="text" id="name" name="name" class="form-input"
+                                placeholder="Как к вам обращаться?" required>
+                            <div class="form-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label">Email *</label>
+                            <input type="email" id="email" name="email" class="form-input"
+                                placeholder="example@mail.com" required>
+                            <div class="form-error"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label">Сообщение *</label>
+                            <textarea id="message" name="message" class="form-textarea"
+                                placeholder="Опишите ваш проект, цели и пожелания..." rows="5" required></textarea>
+                            <div class="form-error"></div>
+                        </div>
+
+                        <div class="form-footer">
+                            <button type="submit" class="form-submit">
+                                <span class="submit-text">Отправить заявку</span>
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" stroke-linejoin="round" />
+                                </svg>
+                            </button>
+                            <p class="form-note">* — обязательные поля для заполнения</p>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="faq__header">
+                <h2 class="faq__title">Часто задаваемые <span class="faq__title-accent">вопросы</span></h2>
+                <p class="faq__subtitle">Ответы на популярные вопросы о нашей работе</p>
+            </div>
+
+            <div class="faq__list">
+                <div class="faq__item">
+                    <button class="faq__question">
+                        <span>Сколько времени занимает разработка проекта?</span>
+                        <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="faq__answer">
+                        <p>Сроки зависят от сложности проекта. Обычно на разработку дизайна уходит от 2 до 6 недель.
+                            После согласования дизайна начинается этап разработки, который может занять от 4 до 12
+                            недель.</p>
+                    </div>
+                </div>
+
+                <div class="faq__item">
+                    <button class="faq__question">
+                        <span>Какова стоимость ваших услуг?</span>
+                        <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="faq__answer">
+                        <p>Стоимость индивидуальна для каждого проекта и зависит от объема работ, сложности и сроков. Мы
+                            предлагаем бесплатную консультацию, на которой обсудим ваши задачи и предоставим точную
+                            оценку.</p>
+                    </div>
+                </div>
+
+                <div class="faq__item">
+                    <button class="faq__question">
+                        <span>Предоставляете ли вы поддержку после запуска?</span>
+                        <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="faq__answer">
+                        <p>Да, мы предоставляем техническую поддержку и сопровождение после запуска проекта. Вы можете
+                            выбрать подходящий пакет поддержки в зависимости от ваших потребностей.</p>
+                    </div>
+                </div>
+
+                <div class="faq__item">
+                    <button class="faq__question">
+                        <span>Можно ли вносить изменения в процессе работы?</span>
+                        <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="faq__answer">
+                        <p>Конечно! Мы работаем итерациями и регулярно согласовываем результаты с вами. Небольшие правки
+                            включены в стоимость, а значительные изменения обсуждаются отдельно.</p>
+                    </div>
+                </div>
+
+                <div class="faq__item">
+                    <button class="faq__question">
+                        <span>Какие технологии вы используете?</span>
+                        <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="faq__answer">
+                        <p>Мы используем современный стек технологий: React, Next.js, Vue.js для фронтенда, Node.js для
+                            бэкенда. Для дизайна работаем в Figma, Adobe Creative Suite. Выбор технологий зависит от
+                            задач проекта.</p>
+                    </div>
+                </div>
+
+                <div class="faq__item">
+                    <button class="faq__question">
+                        <span>Нужно ли мне предоставлять контент для сайта?</span>
+                        <svg class="faq__icon" width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M19 9L12 16L5 9" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                    <div class="faq__answer">
+                        <p>Желательно, чтобы вы предоставили тексты, изображения и другие материалы. Однако мы также
+                            предлагаем услуги по созданию контента: копирайтинг, фотосъемку и создание графики.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <a href="#" class="footer__logo">
+                        <span class="footer__logo-text">DESIGN</span>
+                        <span class="footer__logo-accent">WAY</span>
+                    </a>
+                </div>
+
+                <nav class="footer__nav">
+                    <a href="#about" class="footer__link">О нас</a>
+                    <a href="#services" class="footer__link">Услуги</a>
+                    <a href="#pricing" class="footer__link">Стоимость</a>
+                    <a href="#portfolio" class="footer__link">Портфолио</a>
+                    <a href="#contact" class="footer__link">Контакты</a>
+                </nav>
+
+                <div class="footer__contacts">
+                    <a href="tel:+1234567890" class="footer__contact">+1 (234) 567-890</a>
+                    <a href="mailto:info@designway.com" class="footer__contact">info@designway.com</a>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copy">© 2025 Все права защищены</p>
+                <div class="footer__legal">
+                    <a href="#privacy" class="footer__legal-link">Политика конфиденциальности</a>
+                    <a href="#terms" class="footer__legal-link">Договор оферты</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="components/header/header.js"></script>
+    <script src="components/hero/hero.js"></script>
+    <script src="components/about/about.js"></script>
+    <script src="components/services/services.js"></script>
+    <script src="components/skills/skills.js"></script>
+    <script src="components/pricing/pricing.js"></script>
+    <script src="components/order/order.js"></script>
+    <script src="components/contact/contact.js"></script>
+
+    <script src="components/portfolio/portfolio.js"></script>
+    <script src="components/faq/faq.js"></script>
+    <script src="components/footer/footer.js"></script>
+    <script src="assets/main.js"></script>
+</body>
+
+</html>
