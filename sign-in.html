@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Авторизация на сайте DESIGNWAY2">
+    <title>Авторизация | DESIGNWAY2</title>
+
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="stylesheet" href="assets/globals.css">
+    <link rel="stylesheet" href="components/header/header.css">
+    <link rel="stylesheet" href="components/footer/footer.css">
+
+    <style>
+        .auth {
+            min-height: calc(100vh - 200px);
+            display: flex;
+            align-items: center;
+            padding: var(--spacing-2xl) 0;
+        }
+
+        .auth__container {
+            max-width: 800px;
+            margin: 0 auto;
+            width: 100%;
+        }
+
+        .auth__card {
+            background: var(--color-bg-primary);
+            border-radius: var(--radius-lg);
+            padding: var(--spacing-2xl);
+            box-shadow: var(--shadow-lg);
+            border: 1px solid var(--color-light-grey);
+        }
+
+        .auth__header {
+            text-align: center;
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .auth__logo {
+            display: inline-flex;
+            margin-bottom: var(--spacing-lg);
+            font-family: var(--font-secondary);
+            font-size: var(--font-size-2xl);
+            font-weight: 600;
+        }
+
+        .auth__logo-text {
+            color: var(--color-text-primary);
+        }
+
+        .auth__logo-accent {
+            color: var(--color-accent);
+        }
+
+        .auth__title {
+            font-size: var(--font-size-2xl);
+            margin-bottom: var(--spacing-md);
+            color: var(--color-text-primary);
+        }
+
+        .auth__subtitle {
+            color: var(--color-text-secondary);
+            line-height: 1.6;
+            margin-bottom: 0;
+        }
+
+        .auth__form {
+            margin-bottom: var(--spacing-xl);
+        }
+
+        .form-group {
+            margin-bottom: var(--spacing-lg);
+        }
+
+        .form-label {
+            display: block;
+            margin-bottom: var(--spacing-xs);
+            font-weight: 500;
+            color: var(--color-text-primary);
+            font-size: var(--font-size-sm);
+        }
+
+        .form-input {
+            width: 100%;
+            padding: var(--spacing-md);
+            border: 1px solid var(--color-light-grey);
+            border-radius: var(--radius-md);
+            font-family: var(--font-primary);
+            font-size: var(--font-size-base);
+            transition: var(--transition-base);
+            background: var(--color-bg-secondary);
+        }
+
+        .form-input:focus {
+            outline: none;
+            border-color: var(--color-accent);
+            box-shadow: 0 0 0 3px rgba(201, 165, 90, 0.1);
+        }
+
+        .form-input::placeholder {
+            color: var(--color-medium-grey);
+        }
+
+        .password-wrapper {
+            position: relative;
+        }
+
+        .password-toggle {
+            position: absolute;
+            right: var(--spacing-md);
+            top: 50%;
+            transform: translateY(-50%);
+            background: none;
+            border: none;
+            color: var(--color-medium-grey);
+            cursor: pointer;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+
+        .password-toggle:hover {
+            color: var(--color-text-primary);
+        }
+
+        .auth__submit {
+            width: 100%;
+            padding: var(--spacing-md);
+            background: var(--color-accent);
+            color: white;
+            border: none;
+            border-radius: var(--radius-md);
+            font-family: var(--font-primary);
+            font-size: var(--font-size-base);
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition-base);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: var(--spacing-sm);
+        }
+
+        .auth__submit:hover {
+            background: var(--color-accent-dark);
+            transform: translateY(-1px);
+        }
+
+        .auth__submit:active {
+            transform: translateY(0);
+        }
+
+        .auth__submit svg {
+            transition: transform var(--transition-base);
+        }
+
+        .auth__submit:hover svg {
+            transform: translateX(4px);
+        }
+
+        .auth__footer {
+            text-align: center;
+            padding-top: var(--spacing-lg);
+            border-top: 1px solid var(--color-light-grey);
+        }
+
+        .auth__help {
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-sm);
+            line-height: 1.6;
+        }
+
+        .auth__links {
+            display: flex;
+            flex-direction: column;
+            gap: var(--spacing-sm);
+            margin-top: var(--spacing-lg);
+        }
+
+        .auth__link {
+            color: var(--color-accent);
+            text-decoration: none;
+            font-size: var(--font-size-sm);
+            transition: var(--transition-base);
+            display: inline-flex;
+            align-items: center;
+            gap: var(--spacing-xs);
+        }
+
+        .auth__link:hover {
+            color: var(--color-accent-dark);
+            text-decoration: underline;
+        }
+
+        .auth__link svg {
+            transition: transform var(--transition-base);
+        }
+
+        .auth__link:hover svg {
+            transform: translateX(2px);
+        }
+
+        .auth__alert {
+            background-color: rgba(201, 165, 90, 0.1);
+            border: 1px solid var(--color-accent);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            margin-bottom: var(--spacing-lg);
+            display: flex;
+            align-items: flex-start;
+            gap: var(--spacing-sm);
+        }
+
+        .auth__alert-icon {
+            color: var(--color-accent);
+            flex-shrink: 0;
+            margin-top: 2px;
+        }
+
+        .auth__alert-text {
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-sm);
+            line-height: 1.5;
+            margin: 0;
+        }
+
+        @media (max-width: 768px) {
+            .auth {
+                padding: var(--spacing-xl) 0;
+            }
+
+            .auth__card {
+                padding: var(--spacing-xl);
+                margin: 0 var(--spacing-sm);
+            }
+
+            .auth__title {
+                font-size: var(--font-size-xl);
+            }
+        }
+
+        @media (max-width: 480px) {
+            .auth__card {
+                padding: var(--spacing-lg);
+                box-shadow: var(--shadow-md);
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="header__nav">
+                <a href="index.html" class="header__logo">
+                    <span class="header__logo-text">DESIGN</span>
+                    <span class="header__logo-accent">WAY</span>
+                </a>
+                <a href="index.html" class="header__menu-link">Вернуться на главную</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="auth">
+        <div class="container auth__container">
+            <div class="auth__card">
+                <div class="auth__header">
+                    <a href="index.html" class="auth__logo">
+                        <span class="auth__logo-text">DESIGN</span>
+                        <span class="auth__logo-accent">WAY</span>
+                    </a>
+                    <h1 class="auth__title">Авторизация на сайте</h1>
+                    <p class="auth__subtitle">Для авторизации используйте свой email и пароль, который был выслан на ваш
+                        e-mail адрес после размещения заказа.</p>
+                </div>
+
+                <div class="auth__alert">
+                    <svg class="auth__alert-icon" width="20" height="20" viewBox="0 0 20 20" fill="none">
+                        <path
+                            d="M10 6V10M10 14H10.01M19 10C19 14.9706 14.9706 19 10 19C5.02944 19 1 14.9706 1 10C1 5.02944 5.02944 1 10 1C14.9706 1 19 5.02944 19 10Z"
+                            stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                    </svg>
+                    <p class="auth__alert-text">Обратите внимание, что иногда письма автоматически помещаются в папку
+                        СПАМ.</p>
+                </div>
+
+                <form id="signin-form" class="auth__form">
+                    <div class="form-group">
+                        <label for="email" class="form-label">Email</label>
+                        <input type="email" id="email" name="email" class="form-input" placeholder="Введите ваш email"
+                            required>
+                    </div>
+
+                    <div class="form-group">
+                        <label for="password" class="form-label">Пароль</label>
+                        <div class="password-wrapper">
+                            <input type="password" id="password" name="password" class="form-input"
+                                placeholder="Введите ваш пароль" required>
+                            <button type="button" class="password-toggle" id="toggle-password"
+                                aria-label="Показать/скрыть пароль">
+                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                    <path d="M10 4C4 4 1 10 1 10C1 10 4 16 10 16C16 16 19 10 19 10C19 10 16 4 10 4Z"
+                                        stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                                    <circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="2"
+                                        stroke-linecap="round" />
+                                </svg>
+                            </button>
+                        </div>
+                    </div>
+
+                    <button type="submit" class="auth__submit">
+                        <span>ВОЙТИ</span>
+                        <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                            <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                        </svg>
+                    </button>
+                </form>
+
+                <div class="auth__footer">
+                    <div class="auth__help">
+                        <p>Если вы забыли пароль или не получили данные для входа, свяжитесь с нами.</p>
+                    </div>
+
+                    <div class="auth__links">
+                        <a href="#" class="auth__link" id="forgot-password">
+                            <span>Забыли пароль?</span>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M6 4H10M10 4L8 2M10 4L8 6" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+
+                        <a href="index.html#contact" class="auth__link">
+                            <span>Связаться с поддержкой</span>
+                            <svg width="16" height="16" viewBox="0 0 16 16" fill="none">
+                                <path d="M3 6H13M13 6L10 3M13 6L10 9" stroke="currentColor" stroke-width="1.5"
+                                    stroke-linecap="round" stroke-linejoin="round" />
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <a href="#" class="footer__logo">
+                        <span class="footer__logo-text">DESIGN</span>
+                        <span class="footer__logo-accent">WAY</span>
+                    </a>
+                </div>
+
+                <nav class="footer__nav">
+                    <a href="/#about" class="footer__link">О нас</a>
+                    <a href="/#services" class="footer__link">Услуги</a>
+                    <a href="/#pricing" class="footer__link">Стоимость</a>
+                    <a href="/#portfolio" class="footer__link">Портфолио</a>
+                    <a href="/#contact" class="footer__link">Контакты</a>
+                </nav>
+
+                <div class="footer__contacts">
+                    <a href="tel:+1234567890" class="footer__contact">+1 (234) 567-890</a>
+                    <a href="mailto:info@designway.com" class="footer__contact">info@designway.com</a>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copy">© 2025 Все права защищены</p>
+                <div class="footer__legal">
+                    <a href="privacy-policy.html" class="footer__legal-link">Политика конфиденциальности</a>
+                    <a href="offer-agreement.html" class="footer__legal-link">Договор оферты</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Показать/скрыть пароль
+            const togglePassword = document.getElementById('toggle-password');
+            const passwordInput = document.getElementById('password');
+
+            togglePassword.addEventListener('click', function () {
+                const type = passwordInput.getAttribute('type') === 'password' ? 'text' : 'password';
+                passwordInput.setAttribute('type', type);
+
+                // Изменение иконки
+                const icon = this.querySelector('svg');
+                if (type === 'text') {
+                    icon.innerHTML = '<path d="M2 2L18 18M10 4C4 4 1 10 1 10C1 10 4 16 10 16C12.5 16 14.5 15 16 14M19 10C19 10 16 4 10 4C9.5 4 9 4 8.5 4.5" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+                } else {
+                    icon.innerHTML = '<path d="M10 4C4 4 1 10 1 10C1 10 4 16 10 16C16 16 19 10 19 10C19 10 16 4 10 4Z" stroke="currentColor" stroke-width="2" stroke-linecap="round"/><circle cx="10" cy="10" r="3" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>';
+                }
+            });
+
+            // Обработка формы
+            const signinForm = document.getElementById('signin-form');
+
+            signinForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                const email = document.getElementById('email').value;
+                const password = document.getElementById('password').value;
+
+                // Простая валидация
+                if (!email || !password) {
+                    alert('Пожалуйста, заполните все поля');
+                    return;
+                }
+
+                if (!validateEmail(email)) {
+                    alert('Пожалуйста, введите корректный email адрес');
+                    return;
+                }
+
+                // Здесь должна быть реальная логика авторизации
+                // В демо-версии просто показываем сообщение
+                alert('Авторизация успешна! В реальном приложении здесь был бы редирект в личный кабинет.');
+
+                // Очистка формы
+                signinForm.reset();
+            });
+
+            // Забыли пароль
+            const forgotPasswordLink = document.getElementById('forgot-password');
+
+            forgotPasswordLink.addEventListener('click', function (e) {
+                e.preventDefault();
+                const email = document.getElementById('email').value;
+
+                if (!email || !validateEmail(email)) {
+                    alert('Пожалуйста, введите ваш email для восстановления пароля');
+                    document.getElementById('email').focus();
+                    return;
+                }
+
+                alert(`Инструкция по восстановлению пароля отправлена на ${email}`);
+            });
+
+            // Валидация email
+            function validateEmail(email) {
+                const re = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                return re.test(email);
+            }
+        });
+    </script>
+</body>
+
+</html>

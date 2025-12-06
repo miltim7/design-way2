@@ -1,0 +1,484 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Информация о доставке и оплате DESIGNWAY2">
+    <title>Информация о доставке | DESIGNWAY2</title>
+
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="stylesheet" href="assets/globals.css">
+    <link rel="stylesheet" href="components/header/header.css">
+    <link rel="stylesheet" href="components/footer/footer.css">
+
+    <style>
+        .delivery {
+            padding: var(--spacing-3xl) 0;
+            min-height: 70vh;
+        }
+
+        .delivery__container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .delivery__header {
+            margin-bottom: var(--spacing-2xl);
+            text-align: center;
+        }
+
+        .delivery__title {
+            font-size: var(--font-size-3xl);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .delivery__subtitle {
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-lg);
+            max-width: 600px;
+            margin: 0 auto var(--spacing-xl);
+        }
+
+        .delivery__content {
+            line-height: 1.8;
+        }
+
+        .delivery__section {
+            margin-bottom: var(--spacing-2xl);
+            padding: var(--spacing-xl);
+            background: var(--color-bg-secondary);
+            border-radius: var(--radius-lg);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .delivery__section-title {
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--spacing-lg);
+            color: var(--color-text-primary);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .delivery__section-title svg {
+            color: var(--color-accent);
+        }
+
+        .delivery__text {
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-text-secondary);
+        }
+
+        .delivery__list {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .delivery__list-item {
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-text-secondary);
+            padding-left: var(--spacing-lg);
+            position: relative;
+        }
+
+        .delivery__list-item:before {
+            content: "✓";
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-weight: bold;
+        }
+
+        .delivery__grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: var(--spacing-lg);
+            margin-top: var(--spacing-lg);
+        }
+
+        .delivery__card {
+            background: white;
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-md);
+            box-shadow: var(--shadow-sm);
+            border: 1px solid var(--color-light-grey);
+        }
+
+        .delivery__card-title {
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-text-primary);
+        }
+
+        .delivery__card-price {
+            font-size: var(--font-size-xl);
+            color: var(--color-accent);
+            font-weight: 600;
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .delivery__warning {
+            background-color: rgba(201, 165, 90, 0.1);
+            border: 2px solid var(--color-accent);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-md);
+            margin: var(--spacing-xl) 0;
+        }
+
+        .delivery__warning-title {
+            font-weight: 600;
+            color: var(--color-accent-dark);
+            margin-bottom: var(--spacing-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .delivery__table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: var(--spacing-lg) 0;
+        }
+
+        .delivery__table th,
+        .delivery__table td {
+            padding: var(--spacing-md);
+            text-align: left;
+            border-bottom: 1px solid var(--color-light-grey);
+        }
+
+        .delivery__table th {
+            font-weight: 600;
+            color: var(--color-text-primary);
+            background-color: var(--color-bg-secondary);
+        }
+
+        .delivery__table tr:hover {
+            background-color: rgba(201, 165, 90, 0.05);
+        }
+
+        .delivery__contact {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-lg);
+            padding: var(--spacing-lg);
+            background: linear-gradient(135deg, var(--color-bg-secondary) 0%, white 100%);
+            border-radius: var(--radius-lg);
+        }
+
+        .delivery__contact-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--color-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .delivery {
+                padding: var(--spacing-2xl) 0;
+            }
+
+            .delivery__title {
+                font-size: var(--font-size-2xl);
+            }
+
+            .delivery__section {
+                padding: var(--spacing-lg);
+            }
+
+            .delivery__contact {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="header__nav">
+                <a href="index.html" class="header__logo">
+                    <span class="header__logo-text">DESIGN</span>
+                    <span class="header__logo-accent">WAY</span>
+                </a>
+                <a href="index.html" class="header__menu-link">Вернуться на главную</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="delivery">
+        <div class="container delivery__container">
+            <div class="delivery__header">
+                <h1 class="delivery__title">Информация о доставке и оплате</h1>
+                <p class="delivery__subtitle">Узнайте все детали о способах оплаты, сроках и условиях доставки готовых
+                    работ</p>
+            </div>
+
+            <div class="delivery__content">
+                <!-- Секция способов оплаты -->
+                <section class="delivery__section">
+                    <h2 class="delivery__section-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M2 8H22V16H2V8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+                            <path d="M6 12H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            <path d="M2 10V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            <path d="M22 10V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                        Способы оплаты
+                    </h2>
+                    <p class="delivery__text">Мы предлагаем несколько удобных способов оплаты наших дизайн-услуг:</p>
+
+                    <div class="delivery__grid">
+                        <div class="delivery__card">
+                            <h3 class="delivery__card-title">Банковская карта</h3>
+                            <p class="delivery__text">Оплата Visa, Mastercard, Мир через защищенный платежный шлюз</p>
+                        </div>
+
+                        <div class="delivery__card">
+                            <h3 class="delivery__card-title">Электронные деньги</h3>
+                            <p class="delivery__text">ЮMoney (Яндекс.Деньги), Qiwi, WebMoney, PayPal</p>
+                        </div>
+
+                        <div class="delivery__card">
+                            <h3 class="delivery__card-title">Банковский перевод</h3>
+                            <p class="delivery__text">Для юридических лиц и ИП по выставленному счету</p>
+                        </div>
+                    </div>
+
+                    <div class="delivery__warning">
+                        <h3 class="delivery__warning-title">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path
+                                    d="M10 6V10M10 14H10.01M19 10C19 14.9706 14.9706 19 10 19C5.02944 19 1 14.9706 1 10C1 5.02944 5.02944 1 10 1C14.9706 1 19 5.02944 19 10Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                            Важная информация
+                        </h3>
+                        <p class="delivery__text">Все платежи защищены SSL-шифрованием. Мы не храним данные вашей
+                            банковской карты.</p>
+                        <p class="delivery__text">Для проектов стоимостью свыше 15 000 рублей доступна оплата в
+                            рассрочку (2 платежа).</p>
+                    </div>
+                </section>
+
+                <!-- Секция условий доставки -->
+                <section class="delivery__section">
+                    <h2 class="delivery__section-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2L2 7L12 12L22 7L12 2Z" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M2 17L12 22L22 17" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                            <path d="M2 12L12 17L22 12" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        Условия доставки готовых работ
+                    </h2>
+                    <p class="delivery__text">Готовые дизайн-проекты доставляются в цифровом формате через следующие
+                        каналы:</p>
+
+                    <ul class="delivery__list">
+                        <li class="delivery__list-item">Электронная почта — основные файлы отправляются на указанный
+                            вами email</li>
+                        <li class="delivery__list-item">Облачное хранилище — ссылки на Google Drive, Dropbox или
+                            Яндекс.Диск</li>
+                        <li class="delivery__list-item">Мессенджеры — Telegram, WhatsApp для оперативной связи</li>
+                        <li class="delivery__list-item">FTP-сервер — для крупных проектов и веб-сайтов</li>
+                    </ul>
+
+                    <h3 class="delivery__card-title">Форматы файлов</h3>
+                    <table class="delivery__table">
+                        <thead>
+                            <tr>
+                                <th>Тип работы</th>
+                                <th>Основные форматы</th>
+                                <th>Дополнительные форматы</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Логотипы</td>
+                                <td>AI, EPS, SVG</td>
+                                <td>PNG, JPG, PDF</td>
+                            </tr>
+                            <tr>
+                                <td>Веб-дизайн</td>
+                                <td>Figma, Sketch</td>
+                                <td>PNG, PDF, HTML</td>
+                            </tr>
+                            <tr>
+                                <td>Полиграфия</td>
+                                <td>PDF, AI, INDD</td>
+                                <td>JPG, PNG, TIFF</td>
+                            </tr>
+                            <tr>
+                                <td>Иллюстрации</td>
+                                <td>AI, PSD, Procreate</td>
+                                <td>PNG, JPG, PDF</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </section>
+
+                <!-- Секция сроков -->
+                <section class="delivery__section">
+                    <h2 class="delivery__section-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M12 8V12L15 15M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                        Сроки выполнения и доставки
+                    </h2>
+
+                    <div class="delivery__grid">
+                        <div class="delivery__card">
+                            <h3 class="delivery__card-title">Стандартные сроки</h3>
+                            <ul class="delivery__list">
+                                <li class="delivery__list-item">Логотип: 3-7 рабочих дней</li>
+                                <li class="delivery__list-item">Баннер/пост: 1-2 рабочих дня</li>
+                                <li class="delivery__list-item">Иллюстрация: 2-5 рабочих дней</li>
+                                <li class="delivery__list-item">Веб-сайт: 14-30 рабочих дней</li>
+                            </ul>
+                        </div>
+
+                        <div class="delivery__card">
+                            <h3 class="delivery__card-title">Экспресс-заказ</h3>
+                            <ul class="delivery__list">
+                                <li class="delivery__list-item">+50% к стоимости</li>
+                                <li class="delivery__list-item">Сокращение сроков на 50%</li>
+                                <li class="delivery__list-item">Приоритетная очередь</li>
+                                <li class="delivery__list-item">Круглосуточная поддержка</li>
+                            </ul>
+                        </div>
+                    </div>
+
+                    <p class="delivery__text"><strong>Важно:</strong> Сроки могут увеличиться в случае:</p>
+                    <ul class="delivery__list">
+                        <li class="delivery__list-item">Задержки с предоставлением материалов от заказчика</li>
+                        <li class="delivery__list-item">Значительных изменений в техническом задании</li>
+                        <li class="delivery__list-item">Сложных согласований с третьими лицами</li>
+                        <li class="delivery__list-item">Праздничных и выходных дней</li>
+                    </ul>
+                </section>
+
+                <!-- Секция гарантий -->
+                <section class="delivery__section">
+                    <h2 class="delivery__section-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M9 12L11 14L15 10M21 12C21 16.9706 16.9706 21 12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12Z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                        Гарантии и повторные отправки
+                    </h2>
+
+                    <div class="delivery__warning">
+                        <h3 class="delivery__warning-title">Бесплатные правки</h3>
+                        <p class="delivery__text">Мы предоставляем <strong>3 бесплатные правки</strong> в течение 14
+                            дней после получения работы.</p>
+                        <p class="delivery__text">Правки должны касаться исправления ошибок или незначительных доработок
+                            согласно ТЗ.</p>
+                    </div>
+
+                    <p class="delivery__text"><strong>Повторная отправка файлов:</strong></p>
+                    <ul class="delivery__list">
+                        <li class="delivery__list-item">Бесплатно — в течение 30 дней после завершения проекта</li>
+                        <li class="delivery__list-item">Сохраняем архив ваших файлов в течение 1 года</li>
+                        <li class="delivery__list-item">Быстрая повторная отправка в течение 24 часов</li>
+                    </ul>
+
+                    <p class="delivery__text"><strong>Хранение проектов:</strong></p>
+                    <ul class="delivery__list">
+                        <li class="delivery__list-item">Исходные файлы сохраняются 12 месяцев</li>
+                        <li class="delivery__list-item">Рекомендуем сохранять копии на своих носителях</li>
+                        <li class="delivery__list-item">По запросу можем передать файлы на физическом носителе
+                            (дополнительная плата)</li>
+                    </ul>
+                </section>
+
+                <!-- Контакты для вопросов -->
+                <section class="delivery__section">
+                    <h2 class="delivery__section-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M21 11.5C21 16.7467 16.7467 21 11.5 21C6.25329 21 2 16.7467 2 11.5C2 6.25329 6.25329 2 11.5 2C16.7467 2 21 6.25329 21 11.5Z"
+                                stroke="currentColor" stroke-width="2" />
+                            <path d="M8 11.5H15M11.5 8V15" stroke="currentColor" stroke-width="2"
+                                stroke-linecap="round" />
+                        </svg>
+                        Остались вопросы?
+                    </h2>
+
+                    <div class="delivery__contact">
+                        <div class="delivery__contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path
+                                    d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z"
+                                    stroke="white" stroke-width="2" />
+                                <path d="M22 6L12 13L2 6" stroke="white" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="delivery__card-title">Служба поддержки</h3>
+                            <p class="delivery__text">По всем вопросам, связанным с оплатой и доставкой работ,
+                                обращайтесь:</p>
+                            <p class="delivery__text"><strong>Email:</strong> delivery@designway.com</p>
+                            <p class="delivery__text"><strong>Телефон:</strong> +1 (234) 567-891</p>
+                            <p class="delivery__text"><strong>Время работы:</strong> Пн-Пт: 9:00-18:00 (по московскому
+                                времени)</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <a href="#" class="footer__logo">
+                        <span class="footer__logo-text">DESIGN</span>
+                        <span class="footer__logo-accent">WAY</span>
+                    </a>
+                </div>
+
+                <nav class="footer__nav">
+                    <a href="/#about" class="footer__link">О нас</a>
+                    <a href="/#services" class="footer__link">Услуги</a>
+                    <a href="/#pricing" class="footer__link">Стоимость</a>
+                    <a href="/#portfolio" class="footer__link">Портфолио</a>
+                    <a href="/#contact" class="footer__link">Контакты</a>
+                </nav>
+
+                <div class="footer__contacts">
+                    <a href="tel:+1234567890" class="footer__contact">+1 (234) 567-890</a>
+                    <a href="mailto:info@designway.com" class="footer__contact">info@designway.com</a>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copy">© 2025 Все права защищены</p>
+                <div class="footer__legal">
+                    <a href="privacy-policy.html" class="footer__legal-link">Политика конфиденциальности</a>
+                    <a href="offer-agreement.html" class="footer__legal-link">Договор оферты</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="components/header/header.js"></script>
+    <script src="components/footer/footer.js"></script>
+</body>
+
+</html>

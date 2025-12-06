@@ -1,0 +1,559 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Способы оплаты DESIGNWAY2">
+    <title>Способы оплаты | DESIGNWAY2</title>
+
+    <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
+    <link rel="stylesheet" href="assets/globals.css">
+    <link rel="stylesheet" href="components/header/header.css">
+    <link rel="stylesheet" href="components/footer/footer.css">
+
+    <style>
+        .payment {
+            padding: var(--spacing-3xl) 0;
+            min-height: 70vh;
+        }
+
+        .payment__container {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .payment__header {
+            margin-bottom: var(--spacing-2xl);
+        }
+
+        .payment__title {
+            font-size: var(--font-size-3xl);
+            margin-bottom: var(--spacing-md);
+        }
+
+        .payment__intro {
+            color: var(--color-text-secondary);
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--spacing-xl);
+            line-height: 1.8;
+        }
+
+        .payment__content {
+            line-height: 1.8;
+        }
+
+        .payment__section {
+            margin-bottom: var(--spacing-2xl);
+            padding-bottom: var(--spacing-xl);
+            border-bottom: 1px solid var(--color-light-grey);
+        }
+
+        .payment__section:last-child {
+            border-bottom: none;
+            margin-bottom: 0;
+        }
+
+        .payment__section-title {
+            font-size: var(--font-size-xl);
+            margin-bottom: var(--spacing-lg);
+            color: var(--color-text-primary);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .payment__section-title svg {
+            color: var(--color-accent);
+        }
+
+        .payment__text {
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-text-secondary);
+        }
+
+        .payment__cards {
+            display: flex;
+            gap: var(--spacing-md);
+            margin: var(--spacing-lg) 0;
+            flex-wrap: wrap;
+        }
+
+        .payment__card {
+            background: var(--color-bg-secondary);
+            padding: var(--spacing-md);
+            border-radius: var(--radius-md);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+            min-width: 150px;
+        }
+
+        .payment__card-icon {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: white;
+            border-radius: var(--radius-sm);
+            box-shadow: var(--shadow-sm);
+        }
+
+        .payment__card-name {
+            font-weight: 600;
+            color: var(--color-text-primary);
+        }
+
+        .payment__list {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: var(--spacing-md);
+        }
+
+        .payment__list-item {
+            margin-bottom: var(--spacing-sm);
+            color: var(--color-text-secondary);
+            padding-left: var(--spacing-lg);
+            position: relative;
+        }
+
+        .payment__list-item:before {
+            content: "•";
+            position: absolute;
+            left: 0;
+            color: var(--color-accent);
+            font-size: 1.5rem;
+            line-height: 1;
+        }
+
+        .payment__warning {
+            background-color: rgba(201, 165, 90, 0.1);
+            border: 1px solid var(--color-accent);
+            padding: var(--spacing-lg);
+            border-radius: var(--radius-md);
+            margin: var(--spacing-lg) 0;
+        }
+
+        .payment__warning-title {
+            font-weight: 600;
+            color: var(--color-accent-dark);
+            margin-bottom: var(--spacing-sm);
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-sm);
+        }
+
+        .payment__details {
+            background: var(--color-bg-secondary);
+            padding: var(--spacing-xl);
+            border-radius: var(--radius-lg);
+            margin: var(--spacing-xl) 0;
+        }
+
+        .payment__details-title {
+            font-size: var(--font-size-lg);
+            margin-bottom: var(--spacing-lg);
+            color: var(--color-text-primary);
+        }
+
+        .payment__detail-item {
+            margin-bottom: var(--spacing-md);
+            display: flex;
+            flex-wrap: wrap;
+            gap: var(--spacing-sm);
+        }
+
+        .payment__detail-label {
+            font-weight: 600;
+            color: var(--color-text-primary);
+            min-width: 200px;
+        }
+
+        .payment__detail-value {
+            color: var(--color-text-secondary);
+            flex: 1;
+        }
+
+        .payment__important {
+            background: linear-gradient(135deg, rgba(201, 165, 90, 0.05) 0%, rgba(201, 165, 90, 0.1) 100%);
+            border-left: 4px solid var(--color-accent);
+            padding: var(--spacing-lg);
+            margin: var(--spacing-xl) 0;
+        }
+
+        .payment__important-title {
+            font-weight: 600;
+            color: var(--color-accent-dark);
+            margin-bottom: var(--spacing-sm);
+        }
+
+        .payment__contact {
+            display: flex;
+            align-items: center;
+            gap: var(--spacing-md);
+            margin-top: var(--spacing-xl);
+            padding: var(--spacing-lg);
+            background: var(--color-bg-secondary);
+            border-radius: var(--radius-lg);
+        }
+
+        .payment__contact-icon {
+            width: 48px;
+            height: 48px;
+            background: var(--color-accent);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            flex-shrink: 0;
+        }
+
+        @media (max-width: 768px) {
+            .payment {
+                padding: var(--spacing-2xl) 0;
+            }
+
+            .payment__title {
+                font-size: var(--font-size-2xl);
+            }
+
+            .payment__cards {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+
+            .payment__card {
+                width: 100%;
+                max-width: 250px;
+            }
+
+            .payment__detail-item {
+                flex-direction: column;
+                gap: var(--spacing-xs);
+            }
+
+            .payment__detail-label {
+                min-width: auto;
+            }
+
+            .payment__contact {
+                flex-direction: column;
+                text-align: center;
+            }
+        }
+    </style>
+</head>
+
+<body>
+    <header class="header">
+        <div class="container">
+            <nav class="header__nav">
+                <a href="index.html" class="header__logo">
+                    <span class="header__logo-text">DESIGN</span>
+                    <span class="header__logo-accent">WAY</span>
+                </a>
+                <a href="index.html" class="header__menu-link">Вернуться на главную</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="payment">
+        <div class="container payment__container">
+            <div class="payment__header">
+                <h1 class="payment__title">Способы оплаты</h1>
+                <p class="payment__intro">Оплата производится через платежный шлюз банка переводом на банковскую карту,
+                    оплатой наличными деньгами или банковским переводом на расчётный счёт.</p>
+            </div>
+
+            <div class="payment__content">
+                <!-- Секция банковских карт -->
+                <section class="payment__section">
+                    <h2 class="payment__section-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M2 8H22V16H2V8Z" stroke="currentColor" stroke-width="2" stroke-linejoin="round" />
+                            <path d="M6 12H8" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            <path d="M2 10V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            <path d="M22 10V14" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                        Банковские карты
+                    </h2>
+
+                    <div class="payment__cards">
+                        <div class="payment__card">
+                            <div class="payment__card-icon">
+                                <svg width="24" height="16" viewBox="0 0 24 16" fill="none">
+                                    <path d="M9 8C9 5.79086 10.7909 4 13 4H22V12H13C10.7909 12 9 10.2091 9 8Z"
+                                        fill="#1A1F71" />
+                                    <path d="M13 4C10.7909 4 9 5.79086 9 8C9 10.2091 10.7909 12 13 12H22V4H13Z"
+                                        fill="#F7A600" />
+                                </svg>
+                            </div>
+                            <span class="payment__card-name">Visa</span>
+                        </div>
+
+                        <div class="payment__card">
+                            <div class="payment__card-icon">
+                                <svg width="24" height="16" viewBox="0 0 24 16" fill="none">
+                                    <circle cx="9" cy="8" r="7" fill="#EB001B" />
+                                    <circle cx="15" cy="8" r="7" fill="#F79E1B" />
+                                </svg>
+                            </div>
+                            <span class="payment__card-name">MasterCard</span>
+                        </div>
+
+                        <div class="payment__card">
+                            <div class="payment__card-icon">
+                                <svg width="24" height="16" viewBox="0 0 24 16" fill="none">
+                                    <circle cx="12" cy="8" r="7" fill="#1E5A96" />
+                                    <path d="M12 4L15 8L12 12L9 8L12 4Z" fill="white" />
+                                </svg>
+                            </div>
+                            <span class="payment__card-name">МИР</span>
+                        </div>
+                    </div>
+
+                    <h3 class="payment__details-title">Правила оплаты</h3>
+                    <p class="payment__text">К оплате принимаются платежные карты: VISA Inc, MasterCard WorldWide, МИР.
+                        Для оплаты товара банковской картой при оформлении заказа в интернет-магазине выберите способ
+                        оплаты: банковской картой.</p>
+
+                    <p class="payment__text">При оплате заказа банковской картой, обработка платежа происходит на
+                        авторизационной странице банка, где Вам необходимо ввести данные Вашей банковской карты:</p>
+
+                    <ul class="payment__list">
+                        <li class="payment__list-item">Тип карты</li>
+                        <li class="payment__list-item">Номер карты</li>
+                        <li class="payment__list-item">Срок действия карты (указан на лицевой стороне карты)</li>
+                        <li class="payment__list-item">Имя держателя карты (латинскими буквами, точно также как указано
+                            на карте)</li>
+                        <li class="payment__list-item">CVC2/CVV2 код</li>
+                    </ul>
+
+                    <div class="payment__warning">
+                        <h4 class="payment__warning-title">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path
+                                    d="M10 6V10M10 14H10.01M19 10C19 14.9706 14.9706 19 10 19C5.02944 19 1 14.9706 1 10C1 5.02944 5.02944 1 10 1C14.9706 1 19 5.02944 19 10Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                            Важно знать
+                        </h4>
+                        <p class="payment__text">Если Ваша карта подключена к услуге 3D-Secure, Вы будете автоматически
+                            переадресованы на страницу банка, выпустившего карту, для прохождения процедуры
+                            аутентификации. Информацию о правилах и методах дополнительной идентификации уточняйте в
+                            Банке, выдавшем Вам банковскую карту.</p>
+                    </div>
+                </section>
+
+                <!-- Секция политики безопасности -->
+                <section class="payment__section">
+                    <h2 class="payment__section-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path d="M12 22C12 22 20 18 20 12V5L12 2L4 5V12C4 18 12 22 12 22Z" stroke="currentColor"
+                                stroke-width="2" stroke-linecap="round" stroke-linejoin="round" />
+                            <path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"
+                                stroke-linejoin="round" />
+                        </svg>
+                        Политика безопасности
+                    </h2>
+
+                    <p class="payment__text">Безопасность обработки интернет-платежей через платежный шлюз банка
+                        гарантирована международным сертификатом безопасности PCI DSS. Передача информации происходит с
+                        применением технологии шифрования SSL. Эта информация недоступна посторонним лицам.</p>
+
+                    <div class="payment__important">
+                        <h4 class="payment__important-title">Советы и рекомендации по необходимым мерам безопасности
+                            проведения платежей с использованием банковской карты:</h4>
+                        <ul class="payment__list">
+                            <li class="payment__list-item">Берегите свои пластиковые карты так же, как бережете наличные
+                                деньги. Не забывайте их в машине, ресторане, магазине и т.д.</li>
+                            <li class="payment__list-item">Никогда не передавайте полный номер своей кредитной карты по
+                                телефону каким-либо лицам или компаниям</li>
+                            <li class="payment__list-item">Всегда имейте под рукой номер телефона для экстренной связи с
+                                банком, выпустившим вашу карту, и в случае ее утраты немедленно свяжитесь с банком</li>
+                            <li class="payment__list-item">Вводите реквизиты карты только при совершении покупки.
+                                Никогда не указывайте их по каким-то другим причинам</li>
+                        </ul>
+                    </div>
+
+                    <p class="payment__text">При оплате заказа банковской картой обработка платежа (включая ввод номера
+                        карты) происходит на защищенной странице процессинговой системы, которая прошла международную
+                        сертификацию. Это значит, что Ваши конфиденциальные данные (реквизиты карты, регистрационные
+                        данные и др.) не поступают в интернет-магазин, их обработка полностью защищена, и никто, в том
+                        числе наш интернет-магазин, не может получить персональные и банковские данные клиента.</p>
+
+                    <p class="payment__text">При работе с карточными данными применяется стандарт защиты информации,
+                        разработанный международными платёжными системами Visa и Masterсard-Payment Card Industry Data
+                        Security Standard (PCI DSS), что обеспечивает безопасную обработку реквизитов Банковской карты
+                        Держателя. Применяемая технология передачи данных гарантирует безопасность по сделкам с
+                        Банковскими картами путем использования протоколов Secure Sockets Layer (SSL), Verifiedby Visa,
+                        Secure Code, и закрытых банковских сетей, имеющих высшую степень защиты.</p>
+
+                    <div class="payment__warning">
+                        <h4 class="payment__warning-title">
+                            <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                                <path
+                                    d="M10 6V10M10 14H10.01M19 10C19 14.9706 14.9706 19 10 19C5.02944 19 1 14.9706 1 10C1 5.02944 5.02944 1 10 1C14.9706 1 19 5.02944 19 10Z"
+                                    stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            </svg>
+                            Возврат средств
+                        </h4>
+                        <p class="payment__text">Уважаемые Клиенты! Информируем Вас о том, что при запросе возврата
+                            денежных средств при отказе от покупки, возврат производится исключительно на ту же
+                            банковскую карту, с которой была произведена оплата.</p>
+                    </div>
+                </section>
+
+                <!-- Секция отказа от услуги -->
+                <section class="payment__section">
+                    <h2 class="payment__section-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M9 9L15 15M15 9L9 15M12 21C7.02944 21 3 16.9706 3 12C3 7.02944 7.02944 3 12 3C16.9706 3 21 7.02944 21 12C21 16.9706 16.9706 21 12 21Z"
+                                stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                        Отказ от услуги
+                    </h2>
+
+                    <p class="payment__text">Право потребителя на расторжение договора об оказании услуги
+                        регламентируется статьей 32 федерального закона «О защите прав потребителей»:</p>
+
+                    <div class="payment__important">
+                        <p class="payment__text">Потребитель вправе расторгнуть договор об оказании услуги в любое
+                            время, уплатив исполнителю часть цены пропорционально части оказанной услуги до получения
+                            извещения о расторжении указанного договора и возместив исполнителю расходы, произведенные
+                            им до этого момента в целях исполнения договора, если они не входят в указанную часть цены
+                            услуги.</p>
+                    </div>
+
+                    <p class="payment__text">Потребитель при обнаружении недостатков оказанной услуги вправе по своему
+                        выбору потребовать:</p>
+
+                    <ul class="payment__list">
+                        <li class="payment__list-item">безвозмездного устранения недостатков;</li>
+                        <li class="payment__list-item">соответствующего уменьшения цены;</li>
+                        <li class="payment__list-item">возмещения понесенных им расходов по устранению недостатков
+                            своими силами или третьими лицами.</li>
+                    </ul>
+
+                    <p class="payment__text">Потребитель вправе предъявлять требования, связанные с недостатками
+                        оказанной услуги, если они обнаружены в течение гарантийного срока, а при его отсутствии в
+                        разумный срок, в пределах двух лет со дня принятия оказанной услуги; Исполнитель отвечает за
+                        недостатки услуги, на которую не установлен гарантийный срок, если потребитель докажет, что они
+                        возникли до ее принятия им или по причинам, возникшим до этого момента.</p>
+                </section>
+
+                <!-- Секция реквизитов -->
+                <section class="payment__section">
+                    <h2 class="payment__section-title">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                            <path
+                                d="M4 4H20C21.1 4 22 4.9 22 6V18C22 19.1 21.1 20 20 20H4C2.9 20 2 19.1 2 18V6C2 4.9 2.9 4 4 4Z"
+                                stroke="currentColor" stroke-width="2" />
+                            <path d="M4 10H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            <path d="M4 14H12" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                            <path d="M16 14H20" stroke="currentColor" stroke-width="2" stroke-linecap="round" />
+                        </svg>
+                        Реквизиты для оплаты
+                    </h2>
+
+                    <div class="payment__details">
+                        <div class="payment__detail-item">
+                            <span class="payment__detail-label">Получатель:</span>
+                            <span class="payment__detail-value">Индивидуальный предприниматель Грибова Екатерина
+                                Алексеевна</span>
+                        </div>
+
+                        <div class="payment__detail-item">
+                            <span class="payment__detail-label">ИНН:</span>
+                            <span class="payment__detail-value">212002780305</span>
+                        </div>
+
+                        <div class="payment__detail-item">
+                            <span class="payment__detail-label">Расчётный счет:</span>
+                            <span class="payment__detail-value">40802810120000010730</span>
+                        </div>
+
+                        <div class="payment__detail-item">
+                            <span class="payment__detail-label">Название банка:</span>
+                            <span class="payment__detail-value">ООО "Банк Точка"</span>
+                        </div>
+
+                        <div class="payment__detail-item">
+                            <span class="payment__detail-label">БИК:</span>
+                            <span class="payment__detail-value">044525104</span>
+                        </div>
+
+                        <div class="payment__detail-item">
+                            <span class="payment__detail-label">Корр. счет:</span>
+                            <span class="payment__detail-value">30101810745374525104</span>
+                        </div>
+                    </div>
+
+                    <div class="payment__contact">
+                        <div class="payment__contact-icon">
+                            <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                                <path
+                                    d="M22 16.92V19.92C22 20.47 21.55 20.92 21 20.92C16.04 20.92 12 16.88 12 11.92C12 6.96 16.04 2.92 21 2.92C21.55 2.92 22 3.37 22 3.92V6.92C22 7.47 21.55 7.92 21 7.92C19.76 7.92 18.62 8.28 17.68 8.88C16.76 9.46 16.01 10.27 15.5 11.22C15.23 11.74 15.08 12.31 15.08 12.92C15.08 13.53 15.23 14.1 15.5 14.62C16.01 15.57 16.76 16.38 17.68 16.96C18.62 17.56 19.76 17.92 21 17.92C21.55 17.92 22 18.37 22 18.92Z"
+                                    stroke="white" stroke-width="2" stroke-linecap="round" />
+                                <path
+                                    d="M15.03 12.92C15.03 17.31 11.39 20.92 7 20.92C2.61 20.92 -1.03 17.31 -1.03 12.92C-1.03 8.53 2.61 4.92 7 4.92C11.39 4.92 15.03 8.53 15.03 12.92Z"
+                                    stroke="white" stroke-width="2" />
+                            </svg>
+                        </div>
+                        <div>
+                            <h3 class="payment__details-title">По вопросам оплаты</h3>
+                            <p class="payment__text">Если у вас возникли вопросы по оплате или нужна дополнительная
+                                информация, свяжитесь с нашей финансовой службой:</p>
+                            <p class="payment__text"><strong>Email:</strong> payment@designway.com</p>
+                            <p class="payment__text"><strong>Телефон:</strong> +1 (234) 567-892</p>
+                            <p class="payment__text"><strong>Время работы:</strong> Пн-Пт: 9:00-18:00 (по московскому
+                                времени)</p>
+                        </div>
+                    </div>
+                </section>
+            </div>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <a href="#" class="footer__logo">
+                        <span class="footer__logo-text">DESIGN</span>
+                        <span class="footer__logo-accent">WAY</span>
+                    </a>
+                </div>
+
+                <nav class="footer__nav">
+                    <a href="/#about" class="footer__link">О нас</a>
+                    <a href="/#services" class="footer__link">Услуги</a>
+                    <a href="/#pricing" class="footer__link">Стоимость</a>
+                    <a href="/#portfolio" class="footer__link">Портфолио</a>
+                    <a href="/#contact" class="footer__link">Контакты</a>
+                </nav>
+
+                <div class="footer__contacts">
+                    <a href="tel:+1234567890" class="footer__contact">+1 (234) 567-890</a>
+                    <a href="mailto:info@designway.com" class="footer__contact">info@designway.com</a>
+                </div>
+            </div>
+
+            <div class="footer__bottom">
+                <p class="footer__copy">© 2025 Все права защищены</p>
+                <div class="footer__legal">
+                    <a href="privacy-policy.html" class="footer__legal-link">Политика конфиденциальности</a>
+                    <a href="offer-agreement.html" class="footer__legal-link">Договор оферты</a>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <script src="components/header/header.js"></script>
+    <script src="components/footer/footer.js"></script>
+</body>
+
+</html>
