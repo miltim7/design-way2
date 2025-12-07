@@ -1,5 +1,3 @@
-// components/portfolio/portfolio.js
-
 document.addEventListener('DOMContentLoaded', function () {
     const slider = document.querySelector('.portfolio__slider');
     const track = document.querySelector('.portfolio__track');
@@ -8,19 +6,15 @@ document.addEventListener('DOMContentLoaded', function () {
     const nextBtn = document.querySelector('.portfolio__arrow--next');
     const dotsContainer = document.querySelector('.portfolio__dots');
 
-    if (!slider || !track || slides.length === 0 || !prevBtn || !nextBtn || !dotsContainer) {
-        return;
-    }
+    if (!slider || !track || slides.length === 0) return;
 
     let currentIndex = 0;
     const lastIndex = slides.length - 1;
 
-    // Создаем точки
     slides.forEach((_, index) => {
         const dot = document.createElement('button');
         dot.type = 'button';
         dot.className = 'portfolio__dot';
-        dot.setAttribute('aria-label', `Показать слайд ${index + 1}`);
         dot.addEventListener('click', () => goToSlide(index));
         dotsContainer.appendChild(dot);
     });
@@ -40,80 +34,33 @@ document.addEventListener('DOMContentLoaded', function () {
         });
     }
 
-    function goToSlide(index) {
-        if (index < 0) {
-            currentIndex = lastIndex;
-        } else if (index > lastIndex) {
-            currentIndex = 0;
-        } else {
-            currentIndex = index;
-        }
+    function goToSlide(i) {
+        currentIndex = i < 0 ? lastIndex : i > lastIndex ? 0 : i;
         updateSlider();
     }
 
-    prevBtn.addEventListener('click', () => {
-        goToSlide(currentIndex - 1);
-    });
+    prevBtn.addEventListener('click', () => goToSlide(currentIndex - 1));
+    nextBtn.addEventListener('click', () => goToSlide(currentIndex + 1));
 
-    nextBtn.addEventListener('click', () => {
-        goToSlide(currentIndex + 1);
-    });
-
-    // Свайпы на тач-устройствах
     let startX = 0;
-    let isDragging = false;
+    let dragging = false;
 
-    slider.addEventListener('touchstart', (e) => {
-        if (!e.touches || !e.touches[0]) return;
+    slider.addEventListener('touchstart', e => {
+        if (!e.touches[0]) return;
         startX = e.touches[0].clientX;
-        isDragging = true;
+        dragging = true;
     });
 
-    slider.addEventListener('touchmove', (e) => {
-        if (!isDragging || !e.touches || !e.touches[0]) return;
-        // можно добавить визуальное перетягивание, но для простоты не двигаем трек
+    slider.addEventListener('touchend', e => {
+        if (!dragging) return;
+        dragging = false;
+
+        const endX = e.changedTouches[0].clientX;
+        const delta = endX - startX;
+
+        if (delta > 50) goToSlide(currentIndex - 1);
+        if (delta < -50) goToSlide(currentIndex + 1);
     });
 
-    slider.addEventListener('touchend', (e) => {
-        if (!isDragging) return;
-        isDragging = false;
-
-        const endX = e.changedTouches && e.changedTouches[0] ? e.changedTouches[0].clientX : startX;
-        const deltaX = endX - startX;
-
-        const swipeThreshold = 50; // px
-
-        if (deltaX > swipeThreshold) {
-            // свайп вправо (показать предыдущий)
-            goToSlide(currentIndex - 1);
-        } else if (deltaX < -swipeThreshold) {
-            // свайп влево (показать следующий)
-            goToSlide(currentIndex + 1);
-        }
-    });
-
-    // Если IntersectionObserver доступен — плавное появление блока
-    const portfolioSection = document.querySelector('.portfolio');
-
-    if ('IntersectionObserver' in window && portfolioSection) {
-        const observer = new IntersectionObserver(
-            (entries) => {
-                entries.forEach((entry) => {
-                    if (entry.isIntersecting) {
-                        portfolioSection.classList.add('portfolio--visible');
-                        observer.unobserve(entry.target);
-                    }
-                });
-            },
-            {
-                threshold: 0.2,
-                rootMargin: '0px 0px -10% 0px',
-            }
-        );
-
-        observer.observe(portfolioSection);
-    }
-
-    // Инициализация
-    goToSlide(0);
+    updateSlider();
 });
