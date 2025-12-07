@@ -1,4 +1,5 @@
 <!-- index.html -->
+
 <!DOCTYPE html>
 <html lang="ru">
 
@@ -6,16 +7,15 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description"
-        content="DESIGNWAY2 - Премиальные решения в области дизайна и разработки. Создаем уникальные проекты с безупречным качеством.">
+        content="SibaxDesign - Премиальные решения в области дизайна и разработки. Создаем уникальные проекты с безупречным качеством.">
     <meta name="keywords" content="дизайн, разработка, веб-дизайн, премиум дизайн, брендинг">
-    <meta name="author" content="DESIGNWAY2">
-
-    <meta property="og:title" content="DESIGNWAY2 - Премиальный дизайн">
+    <meta name="author" content="SibaxDesign">
+    <meta property="og:title" content="SibaxDesign - Премиальный дизайн">
     <meta property="og:description" content="Создаем уникальные проекты с безупречным качеством">
     <meta property="og:type" content="website">
     <meta property="og:image" content="assets/images/og-image.jpg">
 
-    <title>DESIGNWAY2 - Премиальный дизайн и разработка</title>
+    <title>SibaxDesign - Премиальный дизайн и разработка</title>
 
     <link rel="icon" type="image/svg+xml" href="assets/images/favicon.svg">
 
@@ -32,63 +32,13 @@
 
     <link rel="stylesheet" href="components/portfolio/portfolio.css">
     <link rel="stylesheet" href="components/footer/footer.css">
+
+    <link rel="stylesheet" href="components/header/header.css">
+    <link rel="stylesheet" href="components/footer/footer.css">
 </head>
 
 <body>
-
-    <header class="header">
-        <div class="container">
-            <nav class="header__nav">
-                <a href="#" class="header__logo">
-                    <span class="header__logo-text">DESIGN</span>
-                    <span class="header__logo-accent">WAY</span>
-                </a>
-
-                <ul class="header__menu">
-                    <li class="header__menu-item">
-                        <a href="#about" class="header__menu-link">О нас</a>
-                    </li>
-                    <li class="header__menu-item">
-                        <a href="#services" class="header__menu-link">Услуги</a>
-                    </li>
-                    <li class="header__menu-item">
-                        <a href="#pricing" class="header__menu-link">Стоимость</a>
-                    </li>
-                    <li class="header__menu-item">
-                        <a href="#portfolio" class="header__menu-link">Портфолио</a>
-                    </li>
-                    <li class="header__menu-item">
-                        <a href="#contact" class="header__menu-link">Контакты</a>
-                    </li>
-                </ul>
-
-                <a class="header__cta" href="/sign-in.html">
-                    <span>Войти</span>
-                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
-                        <path d="M4 10H16M16 10L11 5M16 10L11 15" stroke="currentColor" stroke-width="2"
-                            stroke-linecap="round" stroke-linejoin="round" />
-                    </svg>
-                </a>
-
-                <button class="header__burger" aria-label="Открыть меню">
-                    <span></span>
-                    <span></span>
-                    <span></span>
-                </button>
-            </nav>
-        </div>
-
-        <div class="header__mobile-menu">
-            <ul class="header__mobile-list">
-                <li><a href="#about" class="header__mobile-link">О нас</a></li>
-                <li><a href="#services" class="header__mobile-link">Услуги</a></li>
-                <li><a href="#portfolio" class="header__mobile-link">Портфолио</a></li>
-                <li><a href="#pricing" class="header__mobile-link">Стоимость</a></li>
-                <li><a href="#contact" class="header__mobile-link">Контакты</a></li>
-            </ul>
-            <a href="/sign-in.html" class="header__mobile-cta">Войти</a>
-        </div>
-    </header>
+    <div data-include="components/header/header.html"></div>
 
     <section class="hero">
         <div class="container">
@@ -146,7 +96,8 @@
 
                         <div class="gallery__item gallery__item--secondary">
                             <div class="gallery__image-wrapper">
-                                <img src="assets/images/about2.png" alt="Рабочее пространство" class="gallery__image">
+                                <img src="assets/images/work-place.jpg" alt="Рабочее пространство"
+                                    class="gallery__image">
                                 <div class="gallery__overlay"></div>
                             </div>
                             <div class="gallery__caption">
@@ -336,7 +287,7 @@
             <div class="skills__grid">
                 <div class="skill">
                     <div class="skill__image">
-                        <img src="assets/images/skills1.avif" alt="Логотип базовый" class="skill__img">
+                        <img src="assets/images/logo-base.jpg" alt="Логотип базовый" class="skill__img">
                     </div>
                     <div class="skill__content">
                         <h3 class="skill__title">Логотип базовый</h3>
@@ -366,7 +317,9 @@
 
                 <div class="skill">
                     <div class="skill__image">
-                        <img src="assets/images/skills3.avif" alt="Анимированный логотип" class="skill__img">
+                        <video src="assets/videos/animated-logo.mp4" class="skill__img" autoplay muted loop playsinline>
+                        </video>
+
                     </div>
                     <div class="skill__content">
                         <h3 class="skill__title">Анимированный логотип</h3>
@@ -396,7 +349,7 @@
 
                 <div class="skill">
                     <div class="skill__image">
-                        <img src="assets/images/skills5.avif" alt="Рекламный баннер" class="skill__img">
+                        <img src="assets/images/reklamniy-banner.jpg" alt="Рекламный баннер" class="skill__img">
                     </div>
                     <div class="skill__content">
                         <h3 class="skill__title">Рекламный баннер</h3>
@@ -411,7 +364,7 @@
 
                 <div class="skill">
                     <div class="skill__image">
-                        <img src="assets/images/skills6.avif" alt="Дизайн открытки" class="skill__img">
+                        <img src="assets/images/oformlenie-otkritok.jpg" alt="Дизайн открытки" class="skill__img">
                     </div>
                     <div class="skill__content">
                         <h3 class="skill__title">Дизайн открытки</h3>
@@ -445,7 +398,7 @@
                     </div>
                     <div class="skill__content">
                         <h3 class="skill__title">Обложка для релиза</h3>
-                        <p class="skill__description">Создание обложек для музыкальных альбомов и синглов, отражающих
+                        <p class="skill__description">Создание обложок для музыкальных альбомов и синглов, отражающих
                             настроение и стиль исполнителя.</p>
                         <div class="skill__footer">
                             <span class="skill__price">от 1500 ₽</span>
@@ -501,7 +454,7 @@
 
                 <div class="skill">
                     <div class="skill__image">
-                        <img src="assets/images/skills12.avif" alt="Дизайн меню" class="skill__img">
+                        <img src="assets/images/menu-design.jpg" alt="Дизайн меню" class="skill__img">
                     </div>
                     <div class="skill__content">
                         <h3 class="skill__title">Дизайн меню</h3>
@@ -699,86 +652,152 @@
         <div class="container">
             <div class="portfolio__header">
                 <h2 class="portfolio__title">Мои <span class="portfolio__title-accent">работы</span></h2>
-                <p class="portfolio__subtitle">Проекты, которыми я горжусь</p>
+                <p class="portfolio__subtitle">Примеры выполненных проектов</p>
             </div>
 
-            <div class="portfolio__grid">
+            <div class="portfolio__masonry">
                 <div class="portfolio__item">
-                    <div class="portfolio__image">
-                        <img src="assets/images/portfolio1.webp" alt="Оформление постов в соцсети" loading="lazy">
-                        <div class="portfolio__overlay">
-                            <div class="portfolio__content">
-                                <span class="portfolio__category">Соцсети</span>
-                                <h3 class="portfolio__name">Оформление постов для модного бренда</h3>
-                                <p class="portfolio__description">Единый визуальный стиль для Instagram</p>
-                            </div>
+                    <article class="portfolio__card">
+                        <div class="portfolio__image">
+                            <img src="assets/images/r1.jpg" alt="Пример работы 1" loading="lazy">
                         </div>
-                    </div>
+                        <div class="portfolio__info">
+                            <span class="portfolio__category">КАРТОЧКА</span>
+                            <h3 class="portfolio__name">Карточка для маркетплейса</h3>
+                        </div>
+                    </article>
                 </div>
 
                 <div class="portfolio__item">
-                    <div class="portfolio__image">
-                        <img src="assets/images/portfolio2.webp" alt="Создание логотипа" loading="lazy">
-                        <div class="portfolio__overlay">
-                            <div class="portfolio__content">
-                                <span class="portfolio__category">Брендинг</span>
-                                <h3 class="portfolio__name">Логотип для кофейни</h3>
-                                <p class="portfolio__description">Уникальный фирменный знак с характером</p>
-                            </div>
+                    <article class="portfolio__card">
+                        <div class="portfolio__image">
+                            <img src="assets/images/r2.jpg" alt="Пример работы 2" loading="lazy">
                         </div>
-                    </div>
+                        <div class="portfolio__info">
+                            <span class="portfolio__category">БАННЕР</span>
+                            <h3 class="portfolio__name">Дизайн рекламного баннера</h3>
+                        </div>
+                    </article>
                 </div>
 
                 <div class="portfolio__item">
-                    <div class="portfolio__image">
-                        <img src="assets/images/portfolio3.jpg" alt="Создание иллюстраций" loading="lazy">
-                        <div class="portfolio__overlay">
-                            <div class="portfolio__content">
-                                <span class="portfolio__category">Иллюстрация</span>
-                                <h3 class="portfolio__name">Иллюстрации для детской книги</h3>
-                                <p class="portfolio__description">Яркие персонажи и сказочные миры</p>
-                            </div>
+                    <article class="portfolio__card">
+                        <div class="portfolio__image">
+                            <img src="assets/images/r3.jpg" alt="Пример работы 3" loading="lazy">
                         </div>
-                    </div>
+                        <div class="portfolio__info">
+                            <span class="portfolio__category">СОЦСЕТИ</span>
+                            <h3 class="portfolio__name">Оформление постов</h3>
+                        </div>
+                    </article>
                 </div>
 
                 <div class="portfolio__item">
-                    <div class="portfolio__image">
-                        <img src="assets/images/portfolio4.jpeg" alt="Обложка музыкального альбома" loading="lazy">
-                        <div class="portfolio__overlay">
-                            <div class="portfolio__content">
-                                <span class="portfolio__category">Музыка</span>
-                                <h3 class="portfolio__name">Обложка для музыкального альбома</h3>
-                                <p class="portfolio__description">Дизайн, передающий атмосферу музыки</p>
-                            </div>
+                    <article class="portfolio__card">
+                        <div class="portfolio__image">
+                            <img src="assets/images/r4.jpg" alt="Пример работы 4" loading="lazy">
                         </div>
-                    </div>
+                        <div class="portfolio__info">
+                            <span class="portfolio__category">МЕНЮ</span>
+                            <h3 class="portfolio__name">Дизайн меню ресторана</h3>
+                        </div>
+                    </article>
                 </div>
 
                 <div class="portfolio__item">
-                    <div class="portfolio__image">
-                        <img src="assets/images/portfolio5.jpg" alt="Дизайн мерча" loading="lazy">
-                        <div class="portfolio__overlay">
-                            <div class="portfolio__content">
-                                <span class="portfolio__category">Мерч</span>
-                                <h3 class="portfolio__name">Коллекция мерча для стартапа</h3>
-                                <p class="portfolio__description">Футболки, худи и аксессуары с брендингом</p>
-                            </div>
+                    <article class="portfolio__card">
+                        <div class="portfolio__image">
+                            <img src="assets/images/r5.jpg" alt="Пример работы 5" loading="lazy">
                         </div>
-                    </div>
+                        <div class="portfolio__info">
+                            <span class="portfolio__category">МЕНЮ</span>
+                            <h3 class="portfolio__name">Дизайн меню ресторана</h3>
+                        </div>
+                    </article>
                 </div>
 
                 <div class="portfolio__item">
-                    <div class="portfolio__image">
-                        <img src="assets/images/portfolio6.jpeg" alt="Инфографика" loading="lazy">
-                        <div class="portfolio__overlay">
-                            <div class="portfolio__content">
-                                <span class="portfolio__category">Инфографика</span>
-                                <h3 class="portfolio__name">Инфографика для IT-компании</h3>
-                                <p class="portfolio__description">Визуализация сложных данных и статистики</p>
-                            </div>
+                    <article class="portfolio__card">
+                        <div class="portfolio__image">
+                            <img src="assets/images/r6.jpg" alt="Пример работы 6" loading="lazy">
                         </div>
-                    </div>
+                        <div class="portfolio__info">
+                            <span class="portfolio__category">МАРКЕТПЛЕЙС</span>
+                            <h3 class="portfolio__name">Карточка товара</h3>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="portfolio__item">
+                    <article class="portfolio__card">
+                        <div class="portfolio__image">
+                            <img src="assets/images/r7.jpg" alt="Пример работы 7" loading="lazy">
+                        </div>
+                        <div class="portfolio__info">
+                            <span class="portfolio__category">РЕКЛАМА</span>
+                            <h3 class="portfolio__name">Рекламный макет</h3>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="portfolio__item">
+                    <article class="portfolio__card">
+                        <div class="portfolio__image">
+                            <img src="assets/images/r8.jpg" alt="Пример работы 8" loading="lazy">
+                        </div>
+                        <div class="portfolio__info">
+                            <span class="portfolio__category">МЕНЮ</span>
+                            <h3 class="portfolio__name">Листовка</h3>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="portfolio__item">
+                    <article class="portfolio__card">
+                        <div class="portfolio__image">
+                            <img src="assets/images/r9.jpg" alt="Пример работы 9" loading="lazy">
+                        </div>
+                        <div class="portfolio__info">
+                            <span class="portfolio__category">Листовка</span>
+                            <h3 class="portfolio__name">Прайс лист барбершопа</h3>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="portfolio__item">
+                    <article class="portfolio__card">
+                        <div class="portfolio__image">
+                            <img src="assets/images/r10.jpg" alt="Пример работы 10" loading="lazy">
+                        </div>
+                        <div class="portfolio__info">
+                            <span class="portfolio__category">МЕРЧ</span>
+                            <h3 class="portfolio__name">Дизайн мерча</h3>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="portfolio__item">
+                    <article class="portfolio__card">
+                        <div class="portfolio__image">
+                            <img src="assets/images/r11.jpg" alt="Пример работы 11" loading="lazy">
+                        </div>
+                        <div class="portfolio__info">
+                            <span class="portfolio__category">Логотип</span>
+                            <h3 class="portfolio__name">Процесс создания логотипа</h3>
+                        </div>
+                    </article>
+                </div>
+
+                <div class="portfolio__item">
+                    <article class="portfolio__card">
+                        <div class="portfolio__image">
+                            <img src="assets/images/r12.jpg" alt="Пример работы 12" loading="lazy">
+                        </div>
+                        <div class="portfolio__info">
+                            <span class="portfolio__category">КАРТОЧКА</span>
+                            <h3 class="portfolio__name">Карточка для фуд-товара</h3>
+                        </div>
+                    </article>
                 </div>
             </div>
         </div>
@@ -1088,41 +1107,7 @@
         </div>
     </section>
 
-    <footer class="footer">
-        <div class="container">
-            <div class="footer__content">
-                <div class="footer__brand">
-                    <a href="#" class="footer__logo">
-                        <span class="footer__logo-text">DESIGN</span>
-                        <span class="footer__logo-accent">WAY</span>
-                    </a>
-                </div>
-
-                <nav class="footer__nav">
-                    <a href="/#about" class="footer__link">О нас</a>
-                    <a href="/#services" class="footer__link">Услуги</a>
-                    <a href="/#pricing" class="footer__link">Стоимость</a>
-                    <a href="/#portfolio" class="footer__link">Портфолио</a>
-                    <a href="/#contact" class="footer__link">Контакты</a>
-                </nav>
-
-                <div class="footer__contacts">
-                    <a href="tel:+1234567890" class="footer__contact">+1 (234) 567-890</a>
-                    <a href="mailto:info@designway.com" class="footer__contact">info@designway.com</a>
-                </div>
-            </div>
-
-            <div class="footer__bottom">
-                <p class="footer__copy">© 2025 Все права защищены</p>
-                <div class="footer__legal">
-                    <a href="privacy-policy.html" class="footer__legal-link">Политика конфиденциальности</a>
-                    <a href="offer-agreement.html" class="footer__legal-link">Договор оферты</a>
-                    <a href="delivery.html" class="footer__legal-link">Правила доставки</a>
-                    <a href="payment.html" class="footer__legal-link">Правила оплаты</a>
-                </div>
-            </div>
-        </div>
-    </footer>
+    <div data-include="components/footer/footer.html"></div>
 
     <script src="components/header/header.js"></script>
     <script src="components/hero/hero.js"></script>
@@ -1137,6 +1122,11 @@
     <script src="components/faq/faq.js"></script>
     <script src="components/footer/footer.js"></script>
     <script src="assets/main.js"></script>
+
+    <script src="components/include.js"></script>
+    <script src="components/header/header.js"></script>
+    <script src="components/footer/footer.js"></script>
+
 </body>
 
 </html>

@@ -1,5 +1,3 @@
-/* components/footer/footer.css */
-
 .footer {
     background-color: var(--color-primary);
     color: var(--color-text-light);
@@ -25,11 +23,6 @@
 .footer__logo {
     display: flex;
     align-items: center;
-    gap: 2px;
-    font-family: var(--font-secondary);
-    font-size: var(--font-size-xl);
-    font-weight: 700;
-    letter-spacing: 2px;
     transition: var(--transition-base);
 }
 
@@ -37,23 +30,10 @@
     opacity: 0.8;
 }
 
-.footer__logo-text {
-    color: var(--color-text-light);
-}
-
-.footer__logo-accent {
-    color: var(--color-accent);
-    position: relative;
-}
-
-.footer__logo-accent::after {
-    content: '';
-    position: absolute;
-    bottom: -4px;
-    left: 0;
-    width: 100%;
-    height: 2px;
-    background-color: var(--color-accent);
+.footer__logo-image {
+    height: 60px;
+    width: auto;
+    display: block;
 }
 
 .footer__nav {
@@ -179,15 +159,15 @@
         flex-direction: column;
         gap: var(--spacing-sm);
     }
+    
+    .footer__logo-image {
+        height: 48px;
+    }
 }
 
 @media (max-width: 480px) {
     .footer {
         padding: var(--spacing-xl) 0 var(--spacing-md);
-    }
-    
-    .footer__logo {
-        font-size: var(--font-size-lg);
     }
     
     .footer__link {
@@ -196,5 +176,9 @@
     
     .footer__contact {
         font-size: var(--font-size-sm);
+    }
+    
+    .footer__logo-image {
+        height: 42px;
     }
 }

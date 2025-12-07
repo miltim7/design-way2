@@ -61,6 +61,7 @@
     font-size: calc(var(--font-size-3xl) * 0.85);
     line-height: 1.1;
     margin-bottom: calc(var(--spacing-md) * 0.85);
+    margin-top: 25px;
     color: var(--color-primary);
 }
 

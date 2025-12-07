@@ -1,0 +1,54 @@
+<!-- components/header/header.html -->
+<header class="header">
+    <div class="container">
+        <nav class="header__nav">
+            <a href="/" class="header__logo">
+                <img src="assets/images/logo.png" alt="SibaxDesign" class="header__logo-image">
+            </a>
+
+            <ul class="header__menu">
+                <li class="header__menu-item">
+                    <a href="/#about" class="header__menu-link">О нас</a>
+                </li>
+                <li class="header__menu-item">
+                    <a href="/#services" class="header__menu-link">Услуги</a>
+                </li>
+                <li class="header__menu-item">
+                    <a href="/#pricing" class="header__menu-link">Стоимость</a>
+                </li>
+                <li class="header__menu-item">
+                    <a href="/#portfolio" class="header__menu-link">Портфолио</a>
+                </li>
+                <li class="header__menu-item">
+                    <a href="/#contact" class="header__menu-link">Контакты</a>
+                </li>
+            </ul>
+
+            <a class="header__cta" href="/sign-in.html">
+                <span>Войти</span>
+                <svg width="20" height="20" viewBox="0 0 20 20" fill="none">
+                    <path d="M4 10H16M16 10L11 5M16 10L11 15"
+                          stroke="currentColor" stroke-width="2"
+                          stroke-linecap="round" stroke-linejoin="round" />
+                </svg>
+            </a>
+
+            <button class="header__burger" aria-label="Открыть меню">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </nav>
+    </div>
+
+    <div class="header__mobile-menu">
+        <ul class="header__mobile-list">
+            <li><a href="/#about" class="header__mobile-link">О нас</a></li>
+            <li><a href="/#services" class="header__mobile-link">Услуги</a></li>
+            <li><a href="/#portfolio" class="header__mobile-link">Портфолио</a></li>
+            <li><a href="/#pricing" class="header__mobile-link">Стоимость</a></li>
+            <li><a href="/#contact" class="header__mobile-link">Контакты</a></li>
+        </ul>
+        <a href="/sign-in.html" class="header__mobile-cta">Войти</a>
+    </div>
+</header>
