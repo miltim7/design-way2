@@ -18,6 +18,11 @@ document.addEventListener('DOMContentLoaded', function() {
         lazyImages.forEach(function(img) {
             imageObserver.observe(img);
         });
+    } else {
+        lazyImages.forEach(function(img) {
+            img.src = img.dataset.src;
+            img.removeAttribute('data-src');
+        });
     }
     
     const anchors = document.querySelectorAll('a[href^="#"]');
@@ -45,4 +50,26 @@ document.addEventListener('DOMContentLoaded', function() {
             }
         });
     });
+
+    function forceShowAnimatedBlocksOnSmallWidth() {
+        if (window.innerWidth >= 1024) return;
+
+        const selectors = [
+            '.service',
+            '.skill',
+            '.pricing-card',
+            '.process-step',
+            '.contact__form-wrapper'
+        ];
+
+        selectors.forEach(sel => {
+            document.querySelectorAll(sel).forEach(el => {
+                el.style.opacity = '1';
+                el.style.transform = 'translateY(0)';
+            });
+        });
+    }
+
+    forceShowAnimatedBlocksOnSmallWidth();
+    window.addEventListener('resize', forceShowAnimatedBlocksOnSmallWidth);
 });

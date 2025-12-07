@@ -322,11 +322,17 @@
     }
     
     .about__gallery {
-        height: 400px;
+        height: auto;
+        align-items: center;
     }
     
     .gallery__wrapper {
-        height: 100%;
+        height: auto;
+        align-items: center;
+    }
+    
+    .gallery__item {
+        max-width: 400px;
     }
     
     .info__items {
@@ -352,7 +358,11 @@
     }
     
     .about__gallery {
-        height: 350px;
+        height: auto;
+    }
+    
+    .gallery__item {
+        max-width: 380px;
     }
     
     .info__title {
@@ -403,7 +413,7 @@
 
 @media (max-width: 480px) {
     .about__gallery {
-        height: 300px;
+        height: auto;
     }
     
     .gallery__caption {

@@ -1,60 +1,100 @@
 document.addEventListener('DOMContentLoaded', function () {
-    const questionButtons = Array.from(document.querySelectorAll('.faq__question'));
+    const questions = Array.from(document.querySelectorAll('.faq__question'));
     const answers = Array.from(document.querySelectorAll('.faq__answer'));
     const questionsCol = document.querySelector('.faq__questions');
     const answersCol = document.querySelector('.faq__answers');
 
-    if (!questionButtons.length || !answers.length || !questionsCol || !answersCol) return;
+    if (!questions.length || !answers.length || !questionsCol || !answersCol) return;
 
-    function alignAnswer(btn, answer) {
-        const questionsRect = questionsCol.getBoundingClientRect();
-        const answersRect = answersCol.getBoundingClientRect();
-        const btnRect = btn.getBoundingClientRect();
-
-        const offsetY = btnRect.top - questionsRect.top;
-        const relativeOffset = offsetY;
-
-        answer.style.transform = `translateY(${relativeOffset}px)`;
-        answersCol.style.height = answer.offsetHeight + relativeOffset + 'px';
+    function isMobile() {
+        return window.innerWidth < 768;
     }
 
-    function setActive(id) {
-        questionButtons.forEach(btn => {
-            const isActive = btn.getAttribute('data-faq') === id;
-            btn.classList.toggle('faq__question--active', isActive);
-        });
-
+    function placeAnswersForMobile() {
         answers.forEach(answer => {
-            const isActive = answer.getAttribute('data-faq') === id;
-            answer.classList.toggle('faq__answer--active', isActive);
-            if (!isActive) {
-                answer.style.transform = 'translateY(0)';
+            const id = answer.getAttribute('data-faq');
+            const btn = document.querySelector('.faq__question[data-faq="' + id + '"]');
+            if (btn && answer.previousElementSibling !== btn) {
+                btn.insertAdjacentElement('afterend', answer);
             }
         });
+    }
 
-        const activeBtn = questionButtons.find(btn => btn.getAttribute('data-faq') === id);
-        const activeAnswer = answers.find(a => a.getAttribute('data-faq') === id);
+    function placeAnswersForDesktop() {
+        answers.forEach(answer => {
+            if (answer.parentElement !== answersCol) {
+                answersCol.appendChild(answer);
+            }
+        });
+    }
 
-        if (activeBtn && activeAnswer) {
-            alignAnswer(activeBtn, activeAnswer);
+    function alignAnswerDesktop(btn, answer) {
+        const questionsRect = questionsCol.getBoundingClientRect();
+        const btnRect = btn.getBoundingClientRect();
+        const offsetY = btnRect.top - questionsRect.top;
+        answer.style.transform = 'translateY(' + offsetY + 'px)';
+        answersCol.style.height = answer.offsetHeight + offsetY + 'px';
+    }
+
+    function setActive(id, toggleAllowed) {
+        const targetBtn = questions.find(b => b.getAttribute('data-faq') === id);
+        const targetAnswer = answers.find(a => a.getAttribute('data-faq') === id);
+        if (!targetBtn || !targetAnswer) return;
+
+        if (isMobile()) {
+            const isAlreadyActive = targetBtn.classList.contains('faq__question--active');
+
+            if (toggleAllowed && isAlreadyActive) {
+                questions.forEach(btn => btn.classList.remove('faq__question--active'));
+                answers.forEach(ans => ans.classList.remove('faq__answer--active'));
+                return;
+            }
+
+            questions.forEach(btn => {
+                btn.classList.toggle('faq__question--active', btn === targetBtn);
+            });
+
+            answers.forEach(ans => {
+                ans.classList.toggle('faq__answer--active', ans === targetAnswer);
+            });
+        } else {
+            questions.forEach(btn => {
+                btn.classList.toggle('faq__question--active', btn === targetBtn);
+            });
+
+            answers.forEach(ans => {
+                const isCurrent = ans === targetAnswer;
+                ans.classList.toggle('faq__answer--active', isCurrent);
+                if (!isCurrent) {
+                    ans.style.transform = 'translateY(0)';
+                }
+            });
+
+            alignAnswerDesktop(targetBtn, targetAnswer);
         }
     }
 
-    questionButtons.forEach(btn => {
+    function handleLayout() {
+        const activeBtn = questions.find(b => b.classList.contains('faq__question--active')) || questions[0];
+        const currentId = activeBtn ? activeBtn.getAttribute('data-faq') : '1';
+
+        if (isMobile()) {
+            placeAnswersForMobile();
+        } else {
+            placeAnswersForDesktop();
+        }
+
+        setActive(currentId, false);
+    }
+
+    questions.forEach(btn => {
         btn.addEventListener('click', function () {
             const id = btn.getAttribute('data-faq');
-            setActive(id);
+            setActive(id, true); // на мобиле разрешаем закрывать повторным кликом
         });
     });
 
-    window.addEventListener('resize', function () {
-        const activeBtn = questionButtons.find(btn => btn.classList.contains('faq__question--active'));
-        const activeAnswer = answers.find(a => a.classList.contains('faq__answer--active'));
-        if (activeBtn && activeAnswer) {
-            alignAnswer(activeBtn, activeAnswer);
-        }
-    });
+    window.addEventListener('resize', handleLayout);
 
-    const initialId = questionButtons[0].getAttribute('data-faq');
-    setActive(initialId);
+    handleLayout();
 });

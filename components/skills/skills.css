@@ -205,6 +205,12 @@
     .skills__grid {
         grid-template-columns: 1fr;
         gap: calc(var(--spacing-md) * 0.85);
+        justify-items: center;
+    }
+    
+    .skill {
+        max-width: 380px;
+        width: 100%;
     }
     
     .skill__image {

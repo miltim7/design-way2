@@ -212,7 +212,13 @@
     font-weight: 600;
     border-radius: 100px;
     transition: var(--transition-base);
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
 }
+
 
 .header__mobile-cta:hover {
     background-color: var(--color-accent);

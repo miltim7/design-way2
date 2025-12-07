@@ -143,6 +143,12 @@
     .services__grid {
         grid-template-columns: 1fr;
         gap: calc(var(--spacing-lg) * 0.85);
+        justify-items: center;
+    }
+    
+    .service {
+        max-width: 380px;
+        width: 100%;
     }
     
     .service__image {
